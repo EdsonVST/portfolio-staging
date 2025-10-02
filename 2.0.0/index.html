@@ -1,0 +1,3037 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson V. S. T. Silva | Fullstack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #3f37c9;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #4cc9f0;
+            --text-light: rgba(255,255,255,0.95);
+            --shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInFromRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Navegação */
+#index        header {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(67, 97, 238, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+    #index    nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+     #index   .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        
+    #index    .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+    #index    .logo-icon {
+            font-size: 1.6rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+        
+    #index    .logo:hover .logo-icon {
+            transform: rotate(15deg);
+        }
+        
+    #index    .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+    #index    .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+    #index    .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 3px;
+        }
+        
+     #index   .nav-links a:hover {
+            color: white;
+        }
+        
+     #index   .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+    #index    .nav-links a.active {
+            color: white;
+            font-weight: 600;
+        }
+        
+    #index    .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* Seção Hero - Imagem ajustada */
+    #index    .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 180px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+    #index    .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+    #index    .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            align-items: center;
+        }
+        
+    #index    .hero-image-container {
+            position: relative;
+            animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+    #index    .hero-image {
+            width: 100%;
+            max-width: 400px; /* Tamanho reduzido da imagem */
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255,255,255,0.05);
+            backdrop-filter: blur(8px);
+        }
+        
+    #index    .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.03);
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.25);
+        }
+        
+    #index    .hero-content {
+            animation: slideInFromRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+            opacity: 0;
+        }
+        
+    #index    .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+     #index   .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, white, #e0e0e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Tech Stack com Efeitos de Cor ao Passar o Mouse */
+    #index    .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 3rem 0;
+        }
+        
+    #index    .tech-icon {
+            font-size: 3rem;
+            color: white;
+            opacity: 0.85;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        
+        /* Cores normais */
+    #index    .fa-python { color: #3776AB; }
+    #index    .fa-database { color: #4DB33D; } /* SQL */
+     #index   .fa-java { color: #007396; }
+     #index   .fa-js { color: #F7DF1E; }
+    #index    .fa-c { color: #A8B9CC; }
+        
+        /* Cores ao passar o mouse */
+    #index    .fa-python:hover { color: #FFD43B; } /* Amarelo Python */
+    #index    .fa-database:hover { color: #61dafb; } /* Azul SQL */
+    #index    .fa-java:hover { color: #f89820; } /* Laranja Java */
+    #index    .fa-js:hover { color: #f0db4f; } /* Amarelo JS mais forte */
+    #index    .fa-c:hover { color: #649ad2; } /* Azul C mais vibrante */
+    #index    .tech-icon[data-tooltip="C++"]:hover { color: #00599C; } /* Azul C++ */
+        
+    #index    .tech-icon:hover {
+            opacity: 1;
+            transform: translateY(-8px) scale(1.1);
+        }
+        
+    #index    .tech-icon::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        
+    #index    .tech-icon:hover::after {
+            opacity: 1;
+        }
+        
+        /* Botões */
+    #index    .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        
+    #index    .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 1.05rem;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+        
+    #index    .btn-primary {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+    #index    .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background-color: var(--light);
+        }
+        
+    #index    .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+    #index    .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+            border-color: white;
+        }
+        
+   #index     .btn i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Rodapé */
+    #index    footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+    #index    footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+    #index    .footer-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+    #index    .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+        
+     #index   .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(5px);
+        }
+        
+    #index    .footer-links a:hover {
+            color: white;
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+        
+    #index    .copyright {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            margin-top: 2.5rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 1200px) {
+    #index        .hero-container {
+                gap: 40px;
+                padding: 0 30px;
+            }
+            
+    #index        .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+     #index       .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+    #index        .hero-image-container {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+     #index       .hero-content {
+                margin-top: 40px;
+            }
+            
+    #index        .tech-stack {
+                justify-content: center;
+            }
+            
+     #index       .cta-buttons {
+                justify-content: center;
+            }
+            
+    #index        .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+    #index        nav {
+                padding: 1rem 1.5rem;
+            }
+            
+   #index         .nav-links {
+                gap: 1.5rem;
+            }
+            
+     #index       .hero-title {
+                font-size: 2.4rem;
+                margin-bottom: 1.5rem;
+            }
+            
+     #index       .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+    #index        .tech-icon {
+                font-size: 2.5rem;
+            }
+            
+    #index        .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+    #index        .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Adicionar no header.css ou no estilo interno */
+@media (max-width: 480px) {
+#index    nav {
+        padding: 0.8rem 1rem;
+    }
+    
+#index    .nav-links {
+        gap: 0.5rem;
+    }
+    
+#index    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+    }
+    
+#index    .logo {
+        font-size: 1rem;
+    }
+    
+#index    .logo-icon {
+        font-size: 1rem;
+    }
+}
+
+/* Adicionar na seção de media queries existente */
+@media (max-width: 480px) {
+#index    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+#index    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+ #index   .tech-icon {
+        font-size: 1.8rem;
+    }
+    
+ #index   .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/*Projetos*/
+
+    #projetos body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+                 
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+     
+    #projetos    .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+    #projetos    section {
+            padding: 100px 0;
+            position: relative;
+
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 150px 0 100px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -50px;
+            text-align: center;
+        }
+        
+        /* Seção Hero Projetos */
+    #projetos    .projects-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 150px 0 100px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -50px;
+            text-align: center;
+
+
+        }
+        
+    #projetos    .projects-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+    #projetos    .projects-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+        
+        /* Filtros */
+     #projetos   .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+        
+    #projetos    .filter-btn {
+            background: #4361ee;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+    #projetos    .filter-btn:hover, .filter-btn.active {
+            background: #4362eea9;
+            transform: translateY(-3px);
+        }
+        
+        /* Grid de Projetos */
+    #projetos    .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+    #projetos   .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            animation: fadeIn 0.6s ease-out;
+            display: flex;
+            flex-direction: column;
+        }
+        
+    #projetos    .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+    #projetos    .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+    #projetos    .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+    #projetos    .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+    #projetos    .project-tags {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+   #projetos     .project-tag {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            backdrop-filter: blur(5px);
+        }
+        
+    #projetos    .project-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+    #projetos    .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+    #projetos    .project-description {
+            color: #555;
+            text-indent: 30px;
+            text-align: justify;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex: 1;
+        }
+        
+    #projetos    .project-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+        
+    #projetos    .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            gap: 8px;
+        }
+        
+    #projetos    .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            flex: 1;
+        }
+        
+    #projetos    .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+     #projetos   .btn-secondary {
+            background-color: var(--dark);
+            color: white;
+            flex: 1;
+        }
+        
+    #projetos    .btn-secondary:hover {
+            background-color: #111;
+            transform: translateY(-3px);
+        }
+        
+        /* Destaque */
+     #projetos   .featured-project {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+     #projetos   .featured-project .project-image {
+            height: auto;
+        }
+        
+    #projetos    .featured-project .project-content {
+            padding: 35px;
+        }
+        
+    #projetos    .featured-project .project-title {
+            font-size: 1.8rem;
+        }
+        
+        /* Seção CTA */
+    #projetos    .projects-cta {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            margin-top: 50px;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+    #projetos    .projects-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+    #projetos    .projects-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+    #projetos    .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+    #projetos    .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+    #projetos    .cta-btn i {
+            margin-left: 10px;
+        }
+
+    #projetos    .projects-hero {
+            padding: 180px 0 100px; /* Aumente o padding-top para 180px */
+        }
+        
+        /* Responsivo */
+        @media (max-width: 992px) {
+     #projetos       .featured-project {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+            
+     #projetos       .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+    #projetos        .projects-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+     #projetos       .projects-hero p {
+                font-size: 1rem;
+            }
+            
+    #projetos        .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            
+    #projetos        .project-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Adicionar no header.css ou no estilo interno */
+@media (max-width: 480px) {
+#projetos    nav {
+        padding: 0.8rem 1rem;
+    }
+    
+#projetos    .nav-links {
+        gap: 0.5rem;
+    }
+    
+#projetos    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+    }
+    
+#projetos    .logo {
+        font-size: 1rem;
+    }
+    
+#projetos    .logo-icon {
+        font-size: 1rem;
+    }
+}
+
+/* Adicionar na seção de media queries existente */
+@media (max-width: 480px) {
+#projetos    .projects-hero h1 {
+        font-size: 2rem;
+    }
+    
+#projetos    .projects-hero p {
+        font-size: 0.9rem;
+    }
+    
+#projetos    .project-card {
+        grid-template-columns: 1fr;
+    }
+    
+ #projetos   .project-buttons {
+        flex-direction: column;
+    }
+}
+/* FIM Projetos */
+
+/* Inicio sobre */
+
+    #sobre    .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+    #sobre    section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+     #sobre   a {
+            color: white;
+        }
+        
+        /* Seção Hero Sobre Mim */
+    #sobre    .about-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 180px 0 100px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -50px;
+        }
+        
+    #sobre    .about-hero .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+    #sobre    .profile-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: rotate(-5deg);
+            transition: all 0.5s ease;
+            animation: fadeIn 1s ease-out;
+        }
+        
+     #sobre   .profile-image:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+        
+     #sobre   .hero-content {
+            flex: 1;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+        
+     #sobre   .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+    #sobre    .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+    #sobre    .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+    #sobre    .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+    #sobre    .tag:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+        
+     #sobre   .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+    #sobre    .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+     #sobre   .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        /* Seção Minha Jornada */
+    #sobre    .journey-section {
+            padding-top: 50px;
+        }
+        
+    #sobre    .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+        
+    #sobre    .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        
+    #sobre    .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+    #sobre    .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 10px;
+        }
+        
+    #sobre    .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            animation: fadeIn 0.6s ease-out;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+        
+    #sobre    .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    #sobre    .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 80px;
+            text-align: right;
+        }
+        
+    #sobre    .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 80px;
+        }
+        
+    #sobre    .timeline-item:nth-child(even) .timeline-content {
+            margin-left: -10%;
+        }
+
+    #sobre    .timeline-content {
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.4s ease;
+            width: 120%; 
+            margin-left: -10%;
+        }
+        
+   #sobre     .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+    #sobre    .timeline-date {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+    #sobre    .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+    #sobre    .timeline-company {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+    #sobre    .timeline-desc {
+            text-align: justify;
+            text-indent: 30px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+    #sobre    .timeline-desc-p{
+            text-align: justify;
+            text-indent: 30px;
+        }
+        
+    #sobre    .timeline-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: var(--primary);
+            font-size: 1.3rem;
+            top: 30px;
+            z-index: 1;
+        }
+        
+    #sobre    .timeline-item:nth-child(odd) .timeline-icon {
+            right: -25px;
+        }
+        
+     #sobre   .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: -10%; 
+        }
+    #sobre    .timeline-item:nth-child(even) .timeline-icon {
+            left: -25px;
+        }
+        
+        /* Seção de Conhecimentos */
+    #sobre    .knowledge-section {
+            background: var(--dark);
+            color: white;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+            padding: 150px 0 100px;
+            margin-top: -50px;
+        }
+        
+    #sobre    .knowledge-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+    #sobre    .knowledge-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+    #sobre    .knowledge-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+    #sobre    .knowledge-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+    #sobre    .knowledge-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+    #sobre    .knowledge-level {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Modal de Conhecimentos */
+    #sobre    .knowledge-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(26, 26, 46, 0);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, background-color 0.4s ease;
+            padding: 20px;
+        }
+        
+    #sobre    .knowledge-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            background-color: rgba(26, 26, 46, 0.95);
+        }
+        
+    #sobre    .knowledge-modal-content {
+            background: rgba(31, 55, 201, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--accent);
+            box-shadow: 0 15px 50px rgba(76, 201, 240, 0.3);
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.4s ease;
+            position: relative;
+        }
+        
+    #sobre    .knowledge-modal-overlay.active .knowledge-modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+    #sobre    .knowledge-modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(76, 201, 240, 0.3);
+            padding-bottom: 20px;
+        }
+        
+    #sobre    .knowledge-modal-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-right: 25px;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+    #sobre    .knowledge-modal-title {
+            font-size: 2.2rem;
+            color: white;
+            margin: 0;
+        }
+        
+    #sobre    .knowledge-modal-level {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+    #sobre    .knowledge-modal-body {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+    #sobre    .knowledge-modal-body p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+    #sobre    .knowledge-modal-body ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+    #sobre    .knowledge-modal-body li {
+            margin-bottom: 8px;
+        }
+        
+    #sobre    .knowledge-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+    #sobre    .knowledge-modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        /* Filtros */
+     #sobre   .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+        
+    #sobre    .filter-btn {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+     #sobre   .filter-btn.active {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Efeito de clone para animação */
+     #sobre   .card-clone {
+            position: fixed;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 992px) {
+    #sobre        .about-hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+    #sobre        .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+            
+    #sobre        .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+    #sobre        .tag-list {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+    #sobre        .timeline::before {
+                left: 40px;
+            }
+            
+    #sobre        .timeline-item {
+                width: 100%;
+                padding-left: 90px;
+                padding-right: 20px;
+            }
+            
+     #sobre       .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+    #sobre        .timeline-item:nth-child(odd) {
+                text-align: left;
+                padding-right: 20px;
+            }
+            
+     #sobre       .timeline-item:nth-child(odd) .timeline-icon,
+    #sobre        .timeline-item:nth-child(even) .timeline-icon {
+                left: 15px;
+                right: auto;
+            }
+            
+    #sobre        .knowledge-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+     #sobre       .knowledge-modal-content {
+                padding: 30px 20px;
+                width: 95%;
+            }
+            
+     #sobre       .knowledge-modal-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+    #sobre        .knowledge-modal-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+                font-size: 2.5rem;
+            }
+            
+     #sobre       .knowledge-modal-title {
+                font-size: 1.8rem;
+            }
+            
+    #sobre        .knowledge-modal-body {
+                font-size: 1rem;
+            }
+            
+     #sobre       .goal-card {
+                padding: 30px 20px;
+            }
+            
+     #sobre       .goal-title {
+                font-size: 1.5rem;
+            }
+            
+     #sobre       .goal-desc {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Ajustando os delays para animação em sequência */
+    #sobre    .timeline-item:nth-child(1) { transition-delay: 0.1s; }
+    #sobre    .timeline-item:nth-child(2) { transition-delay: 0.3s; }
+    #sobre    .timeline-item:nth-child(3) { transition-delay: 0.5s; }
+     #sobre   .timeline-item:nth-child(4) { transition-delay: 0.7s; }
+
+
+        /* Adicionar no header.css ou no estilo interno */
+@media (max-width: 480px) {
+ #sobre   nav {
+        padding: 0.8rem 1rem;
+    }
+    
+ #sobre   .nav-links {
+        gap: 0.5rem;
+    }
+    
+#sobre    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+    }
+    
+#sobre    .logo {
+        font-size: 1rem;
+    }
+    
+#sobre    .logo-icon {
+        font-size: 1rem;
+    }
+}
+
+/* Adicionar na seção de media queries existente */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+#sobre  .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+#sobre   .tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+#sobre .knowledge-card {
+        padding: 15px;
+    }
+}
+
+/* FIM sobre*/
+
+
+/*inicio contatos*/
+    #contatos    .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+    #contatos    section {
+            
+
+            background: linear-gradient(135deg, var(--light) 0%, var(--light) 100%);
+            color: white;
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+            padding: 120px 0 80px;
+            margin-top: -50px;
+        }
+        
+        /* Seção de Contato Direta */
+    #contatos    .direct-contact {
+            padding: 100px 0 60px;
+        }
+        
+    #contatos    .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+    #contatos    .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        
+    #contatos    .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+    #contatos    .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            animation: fadeIn 0.6s ease-out;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border-top: 5px solid var(--primary);
+        }
+        
+    #contatos    .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-top-color: var(--accent);
+        }
+        
+    #contatos    .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+        
+    #contatos    .contact-card:hover .contact-icon {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+        
+    #contatos    .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+    #contatos    .contact-info {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+    #contatos    .contact-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+     #contatos   .contact-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(63, 55, 201, 0.3);
+        }
+        
+        /* Seção de Formulário */
+    #contatos    .form-section {
+            
+        }
+        
+     #contatos   .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+     #contatos   .form-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+    #contatos    .form-group {
+            margin-bottom: 25px;
+        }
+        
+    #contatos    .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--accent);
+        }
+        
+    #contatos    .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+    #contatos    .form-control::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+    #contatos    .form-control:focus {
+            outline: none;
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        
+    #contatos    textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+    #contatos    .submit-btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 40px auto 0;
+            width: fit-content;
+        }
+        
+    #contatos    .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Redes Sociais */
+    #contatos    .social-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+    #contatos    .social-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+    #contatos    .social-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+    #contatos    .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+    #contatos    .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+    #contatos    .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-5px) scale(1.1);
+        }
+
+    #contatos    .direct-contact {
+            padding: 180px 0 60px; /* Aumente o padding-top para 180px */
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+    #contatos        section {
+                padding: 60px 0;
+            }
+            
+    #contatos        .direct-contact {
+                padding: 80px 0 40px;
+            }
+            
+    #contatos        .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
+    #contatos        .form-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+    #contatos        .section-title {
+                font-size: 1.8rem;
+            }
+            
+    #contatos        .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+    #contatos        .social-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Adicionar no header.css ou no estilo interno */
+@media (max-width: 480px) {
+ #contatos   nav {
+        padding: 0.8rem 1rem;
+    }
+    
+#contatos    .nav-links {
+        gap: 0.5rem;
+    }
+    
+#contatos    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+    }
+    
+#contatos    .logo {
+        font-size: 1rem;
+    }
+    
+#contatos    .logo-icon {
+        font-size: 1rem;
+    }
+}
+
+/* Adicionar na seção de media queries existente */
+@media (max-width: 480px) {
+ #contatos   .section-title {
+        font-size: 1.8rem;
+    }
+    
+ #contatos   .contact-card {
+        padding: 20px 15px;
+    }
+    
+ #contatos   .contact-link {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+/*FIm contatos*/
+    </style>
+</head>
+<body>
+    <!-- index -->
+
+<section id="index">
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="fas fa-code logo-icon" ></i>
+                <span>EdsonVST</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="sobre_mim.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contatos.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image-container">
+                <!-- Imagem ajustada para tamanho menor -->
+                <img src="image/edson.jpg" 
+                     alt="Edson Silva" 
+                     class="hero-image">
+            </div>
+            
+            <div class="hero-content">
+                <h2 class="hero-subtitle">Fullstack Developer</h2>
+                <h1 class="hero-title">EDSON V. S. T. SILVA</h1>
+                
+                <!-- Tech Stack com efeitos de hover coloridos -->
+                <div class="tech-stack">
+                    <i class="fab fa-python tech-icon" data-tooltip="Python"></i>
+                    <i class="fas fa-database tech-icon" data-tooltip="SQL"></i>
+                    <i class="fab fa-java tech-icon" data-tooltip="Java"></i>
+                    <i class="fab fa-js tech-icon" data-tooltip="JavaScript"></i>
+                    <i class="fas fa-c tech-icon" data-tooltip="C"></i>
+                    <div class="tech-icon" style="font-size: 3rem; font-weight: bold;" data-tooltip="C++">C<span style="color: #00599C;">++</span></div>
+                </div>
+                
+                <!-- Botões de Ação -->
+                <div class="cta-buttons">
+                    <a href="sobre_mim.html" class="btn btn-primary">
+                        <i class="fas fa-laptop-code"></i> Quem sou eu
+                    </a>
+                    <a href="doc/Edson_Taveira-Currículo.pdf" class="btn btn-secondary" download>
+                        <i class="fas fa-download"></i> Baixar Currículo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</section>
+
+</section>
+<!--FIM index-->
+
+
+<!--inicio Sobre-->
+
+<section id="sobre">   
+       
+    <!-- Seção Hero Sobre Mim -->
+    <section class="about-hero">
+        <div class="container">
+            <img src="image/edson.jpg" alt="Edson Vinicio" class="profile-image">
+            <div class="hero-content">
+                <h1>Desenvolvedor Fullstack</h1>
+                <p class="timeline-desc-p">Estudante do 6° semestre de Engenharia da Computação pela <a href="https://facens.br/" target="_blank" class="timeline-desc-p" >Facens</a>, encontro na tecnologia, o motor para transformar desafios em soluções inovadoras. Minha paixão por lógica, aliada à crescente experiência em desenvolvimento de software e análise de dados, me permite explorar as últimas tendências e criar aplicações que realmente façam a diferença.</p>
+                
+                <div class="tag-list">
+                    <span class="tag">Analista de Dados</span>
+                    <span class="tag">Técnico de Suporte</span>
+                    <span class="tag">Desenvolvedor</span>
+                    <span class="tag">Técnico de Edificações</span>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/EdsonVST" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/edson-vinicio-silva-459675298/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="https://www.instagram.com/edson_vinicio/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Minha Jornada -->
+    <section class="journey-section">
+        <div class="container">
+            <h2 class="section-title">Minha Jornada</h2>
+            
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019 - 2021</span>
+                        <h3 class="timeline-title">Edificações</h3>
+                        <span class="timeline-company">Curso Técnico</span>
+                        <p class="timeline-desc">Está formação me proporcionou um conhecimento robusto em criação de projetos <b>(AutoCAD, SketchUp)</b>, gestão e normas técnicas (ABNT/NRs). A vivência prática em <b>topografia</b> e <b>controle de qualidade</b> consolidou esse aprendizado teórico, e foi nesse ambiente dinâmico que meu interesse por desafios criativos e soluções inovadoras floresceu. Ali, minhas habilidades comunicativas e comportamentais foram aprimoradas ao máximo, representando um ponto crucial no meu desenvolvimento pessoal.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2022</span>
+                        <h3 class="timeline-title">Auxiliar de Montagem e Instalação</h3>
+                        <span class="timeline-company">Esquadriclass</span>
+                        <p class="timeline-desc">Durante minha atuação na Esquadriclass, ganhei experiência prática em produção industrial e implementei sistemas de controle através de planilhas avançadas. Essa experiência multidisciplinar fortaleceu minha comunicação e colaboração em equipe. Além disso, essa vivência aguçou minha visão sobre como a tecnologia pode revolucionar processos industriais, alimentando minha paixão pela área tech e motivando minha jornada para a Engenharia da Computação.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Presente</span>
+                        <h3 class="timeline-title">Engenharia de Computação</h3>
+                        <span class="timeline-company">Formação Acadêmica</span>
+                        <p class="timeline-desc">A Engenharia da Computação tem sido fundamental na minha evolução como desenvolvedor, permitindo um aprofundamento constante em programação, sistemas embarcados e análise de dados. Por meio de projetos acadêmicos desafiadores, estou construindo um conjunto de habilidades práticas essenciais para converter problemas complexos em soluções tecnológicas inovadoras, o que reforça minha paixão pelo desenvolvimento de software e data science.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - Presente</span>
+                        <h3 class="timeline-title">Suporte Técnico</h3>
+                        <span class="timeline-company">Diamond Office</span>
+                        <p class="timeline-desc">Na Diamond, sou responsável pela gestão completa do TMS, incluindo configuração, troubleshooting avançado, correções em banco de dados e controle de servidor, assegurando a integração fluida com os demais sistemas. Também presto suporte técnico especializado aos sistemas Datasul, RM e Gládios, com profundo conhecimento em processos fiscais e resolução de problemas de software. Minhas atividades abrangem a documentação de incidentes e a implementação de melhorias contínuas, focando em um atendimento ao cliente eficaz e no desenvolvimento constante de soluções de TI.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Conhecimentos Técnicos -->
+    <section class="knowledge-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Conhecimentos Técnicos</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="Programação">Programação</button>
+                <button class="filter-btn" data-filter="Sistemas">Sistemas</button>
+                <button class="filter-btn" data-filter="Software">Software</button>
+                <button class="filter-btn" data-filter="Escritório">Escritório</button>
+            </div>
+            
+            <div class="knowledge-container">
+                <!-- Python -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="python">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-python"></i></div>
+                        <h3 class="knowledge-title">Python</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- Java -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="java">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-java"></i></div>
+                        <h3 class="knowledge-title">Java</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="javascript">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-js"></i></div>
+                        <h3 class="knowledge-title">JavaScript</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- SQL -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="sql">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-database"></i></div>
+                        <h3 class="knowledge-title">SQL</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- C -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="c">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="knowledge-title">C</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <!-- C++ -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="cc">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="knowledge-title">C++</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card" data-category="Programação" data-knowledge="html">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-html5"></i></div>
+                        <h3 class="knowledge-title">HTML5</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+
+                 <div class="knowledge-card" data-category="Programação" data-knowledge="css">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3 class="knowledge-title">CSS3</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card" data-category="Programação" data-knowledge="api">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cloud"></i></div>
+                        <h3 class="knowledge-title">API</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card" data-category="Programação" data-knowledge="github">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-github"></i></div>
+                        <h3 class="knowledge-title">GitHub</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- Arduino -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="arduino">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-microchip"></i></div>
+                        <h3 class="knowledge-title">Arduino</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <!-- Power BI -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="bi">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="knowledge-title">Power BI</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- Pacote Office -->
+                <div class="knowledge-card" data-category="Escritório" data-knowledge="office">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-file-excel"></i></div>
+                        <h3 class="knowledge-title">Pacote Office</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- Datasul -->
+                <div class="knowledge-card" data-category="Sistemas" data-knowledge="datasul">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-industry"></i></div>
+                        <h3 class="knowledge-title">Datasul</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- RM -->
+                <div class="knowledge-card" data-category="Sistemas" data-knowledge="rm">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="knowledge-title">RM</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+                
+                <!-- TMS -->
+                <div class="knowledge-card" data-category="Sistemas" data-knowledge="tms">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-truck"></i></div>
+                        <h3 class="knowledge-title">TMS</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- AutoCAD -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="autocad">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-ruler-combined"></i></div>
+                        <h3 class="knowledge-title">AutoCAD</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- SketchUp -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="sketchup">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cube"></i></div>
+                        <h3 class="knowledge-title">SketchUp</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- 3ds Max -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="3dsmax">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cubes"></i></div>
+                        <h3 class="knowledge-title">3ds Max</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal de Conhecimentos -->
+    <div id="knowledgeModal" class="knowledge-modal-overlay">
+        <div class="knowledge-modal-content">
+            <span class="knowledge-modal-close">&times;</span>
+            <div class="knowledge-modal-header">
+                <div class="knowledge-modal-icon" id="modalIcon"></div>
+                <div>
+                    <h2 class="knowledge-modal-title" id="modalTitle"></h2>
+                    <span class="knowledge-modal-level" id="modalLevel"></span>
+                </div>
+            </div>
+            <div class="knowledge-modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        // Banco de dados de conhecimentos com descrições detalhadas
+        const knowledgeDB = {
+            python: {
+                title: "Python",
+                icon: '<i class="fab fa-python"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Minha principal ferramenta para análise de dados e automação de processos. Tenho experiência com:</p>
+                    <ul>
+                        <li>Desenvolvimento de scripts para tratamento e análise de grandes volumes de dados</li>
+                        <li>Criação de APIs REST com Flask e FastAPI</li>
+                        <li>Automação de tarefas repetitivas e extração de dados de diversas fontes</li>
+                        <li>Implementação de algoritmos de machine learning básicos</li>
+                        <li>Integração com bancos de dados relacionais e NoSQL</li>
+                    </ul>
+                    <p>Utilizo frequentemente bibliotecas como Pandas, NumPy, Matplotlib e Requests para resolver problemas complexos de forma eficiente.</p>
+                `
+            },
+            java: {
+                title: "Java",
+                icon: '<i class="fab fa-java"></i>',
+                level: "Básico",
+                description: `
+                    <p>Linguagem que estou aprendendo para desenvolver aplicativos:</p>
+                    <ul>
+                        <li>Noções básicas de sintaxe e estrutura da linguagem</li>
+                        <li>Programação Orientada a Objetos (POO): Classes, objetos, métodos, encapsulamento e herança simples</li>
+                        <li>Aplicações simples: Jogos e programas de console como calculadoras e sistemas de cadastro básico</li>
+                        <li>Tratamento de erros: Uso de try-catch para lidar com exceções</li>
+                        <li>Coleções: Introdução a ArrayList e HashMap para armazenar dados</li>
+                    </ul>
+                    <p>Atualmente, estou praticando com pequenos projetos para consolidar os fundamentos e evoluir para aplicações mais complexas.</p>
+                `
+            },
+            javascript: {
+                title: "JavaScript",
+                icon: '<i class="fab fa-js"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>A linguagem que me permite criar experiências web interativas e dinâmicas:</p>
+                    <ul>
+                        <li>Desenvolvimento front-end com manipulação do DOM e eventos</li>
+                        <li>Consumo de APIs REST/GraphQL para aplicações web modernas</li>
+                        <li>Implementação de lógica de interface complexa</li>
+                        <li>Validação de formulários e feedback ao usuário</li>
+                        <li>Conhecimento em ES6+ e padrões modernos de JavaScript</li>
+                    </ul>
+                    <p>Utilizo JavaScript para tornar interfaces estáticas em experiências ricas e responsivas.</p>
+                `
+            },
+            sql: {
+                title: "SQL",
+                icon: '<i class="fas fa-database"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Minha ferramenta essencial para trabalhar com bancos de dados relacionais:</p>
+                    <ul>
+                        <li>Modelagem e normalização de bancos de dados</li>
+                        <li>Criação de queries complexas com múltiplos joins</li>
+                        <li>Otimização de consultas para melhor desempenho</li>
+                        <li>Implementação de stored procedures e triggers</li>
+                        <li>Exportação e importação de dados</li>
+                    </ul>
+                    <p>Experiência prática com MySQL, SQL Server e SQLite em projetos acadêmicos.</p>
+                `
+            },
+            c: {
+                title: "C",
+                icon: '<i class="fas fa-code"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Minha primeira linguagem de programação, utilizada para desenvolvimento de sistemas:</p>
+                    <ul>
+                        <li>Manipulação de ponteiros e gerenciamento manual de memória</li>
+                        <li>Desenvolvimento de algoritmos eficientes e estruturas de dados</li>
+                        <li>Interação com hardware e sistemas embarcados</li>
+                        <li>Uso de bibliotecas padrão para entrada/saída e manipulação de arquivos</li>
+                    </ul>
+                    <p>Utilização em projetos educacionais para compreensão de conceitos fundamentais de computação, desde o baixo nível até abstrações mais complexas.</p>
+                `
+            },
+            cc: {
+                title: "C++",
+                icon: '<i class="fas fa-code"></i>',
+                level: "Básico",
+                description: `
+                    <p>Minha primeira linguagem de programação, utilizada para desenvolvimento de sistemas:</p>
+                    <ul>
+                        <li>Manipulação de ponteiros e gerenciamento manual de memória</li>
+                        <li>Desenvolvimento de algoritmos eficientes e estruturas de dados</li>
+                        <li>Interação com hardware e sistemas embarcados</li>
+                        <li>Uso de bibliotecas padrão para entrada/saída e manipulação de arquivos</li>
+                    </ul>
+                    <p>Utilização em projetos educacionais para compreensão de conceitos fundamentais de computação, desde o baixo nível até abstrações mais complexas.</p>
+                `
+            },
+
+            html: {
+                title: "HTML5",
+                icon: '<i class="fab fa-html5"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Domínio completo da linguagem de marcação para construção de interfaces web profissionais:</p>
+                    <ul>
+                        <li>Estruturação otimizada para SEO com tags semânticas (article, section, nav, etc..)</li>
+                        <li>Templates dinâmicos para CMS (WordPress, Drupal)</li>
+                        <li>Integração com JavaScript (data attributes, DOM manipulation)</li>
+                        <li>HTML modular e reutilizável</li>
+                    </ul>
+                    <p>Transformo designs complexos em HTML eficiente, com foco em semântica, performance e acessibilidade.</p>
+                `
+            },
+
+            css: {
+                title: "CSS3",
+                icon: '<i class="fab fa-css3-alt"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Conhecimento sólido em estilização web com capacidade de implementar layouts responsivos e efeitos visuais:</p>
+                    <ul>
+                        <li>Criação de UI components (buttons, modals, tooltips)</li>
+                        <li>Estilização de formulários acessíveis</li>
+                        <li>Landing pages responsivas</li>
+                        <li>Animações e transições CSS (keyframes, transform)</li>
+                    </ul>
+                    <p>Transformo designs em código mantível, com foco em organização e adaptabilidade.</p>
+                `
+            },
+            api: {
+                title: "API",
+                icon: '<i class="fas fa-cloud"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Desenvolvimento e integração de APIs para conectar sistemas e serviços: </p>
+                    <ul>
+                        <li>Criação de APIs RESTful</li>
+                        <li>Autenticação e autorização (JWT, OAuth2, API Keys)</li>
+                        <li>Consumo de APIs externas (Google Maps, Telegram, Pagamentos, etc.)</li>
+                        <li>Testes de endpoints (Postman, Insomnia)</li>
+                        <li>Integração com front-end e IoT</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos e integrações com IoT (Arduino + APIs).</p>
+                `
+            },
+            github: {
+                title: "GitHub",
+                icon: '<i class="fab fa-github"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Plataforma de versionamento e colaboração para projetos de código e hardware:</p>
+                    <ul>
+                        <li>Controle de versão com Git (branching, merging, rebase)</li>
+                        <li>Gerenciamento de repositórios públicos e privados</li>
+                        <li>GitHub Pages para hospedagem de projetos</li>
+                        <li>Colaboração em equipe (issues, pull requests, code review)</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos e colaboração remota.</p>
+                `
+            },
+            arduino: {
+                title: "Arduino",
+                icon: '<i class="fas fa-microchip"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Plataforma que me permite prototipar soluções de hardware e IoT:</p>
+                    <ul>
+                        <li>Desenvolvimento de sistemas embarcados básicos</li>
+                        <li>Integração com sensores e atuadores diversos</li>
+                        <li>Comunicação serial com computadores</li>
+                        <li>Projetos de automação residencial simples</li>
+                        <li>Monitoramento ambiental com coleta de dados</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos envolvendo controle de dispositivos e automação.</p>
+                `
+            },
+            bi: {
+                title: "Power Bi",
+                icon: '<i class="fas fa-chart-line"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Ferramenta de análise e visualização de dados que permite transformar informações em insights acionáveis:</p>
+                    <ul>
+                        <li>Criação de dashboards interativos e relatórios dinâmicos</li>
+                        <li>Transformação e limpeza de dados usando Power Query</li>
+                        <li>Modelagem de dados e criação de medidas com DAX</li>
+                        <li>Integração com diversas fontes de dados (Excel, SQL, APIs)</li>
+                        <li>Automação de atualizações e compartilhamento de relatórios</li>
+                    </ul>
+                    <p>Experiência em projetos de análise de dados para tomada de decisão empresarial.</p>
+                `
+            },
+            office: {
+                title: "Pacote Office",
+                icon: '<i class="fas fa-file-excel"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Suíte de produtividade que domino profundamente:</p>
+                    <ul>
+                        <li>Excel avançado com fórmulas complexas, tabelas dinâmicas e macros VBA</li>
+                        <li>Criação de documentos profissionais no Word com estilos e modelos</li>
+                        <li>Apresentações dinâmicas no PowerPoint com animações e design</li>
+                        <li>Automação de fluxos de trabalho entre aplicativos</li>
+                        <li>Criação de dashboards e relatórios analíticos</li>
+                    </ul>
+                    <p>Utilizo essas ferramentas diariamente para análise de dados e documentação profissional.</p>
+                `
+            },
+            datasul: {
+                title: "Datasul",
+                icon: '<i class="fas fa-industry"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Sistema ERP que utilizo no suporte técnico profissional:</p>
+                    <ul>
+                        <li>Gerenciamento de usuários e perfis de acesso</li>
+                        <li>Diagnóstico e correção de problemas funcionais no sistema</li>
+                        <li>Parametrização básica do sistema</li>
+                        <li>Extração de relatórios e dados</li>
+                        <li>Integração com outros sistemas corporativos</li>
+                    </ul>
+                    <p>Experiência prática no suporte diário aos usuários e manutenção do sistema.</p>
+                `
+            },
+            rm: {
+                title: "RM",
+                icon: '<i class="fas fa-cogs"></i>',
+                level: "Básico",
+                description: `
+                    <p>Sistema de gestão de relacionamento que domino no contexto profissional:</p>
+                    <ul>
+                        <li>Configuração e manutenção do sistema</li>
+                        <li>Gerenciamento de acessos e segurança</li>
+                        <li>Resolução de problemas e inconsistências</li>
+                        <li>Extração e análise de dados do sistema</li>
+                        <li>Integração com outros sistemas corporativos</li>
+                    </ul>
+                    <p>Atuação direta no suporte técnico e manutenção do sistema em ambiente profissional.</p>
+                `
+            },
+            tms: {
+                title: "TMS",
+                icon: '<i class="fas fa-truck"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Sistema de gerenciamento de transporte com que trabalho atualmente:</p>
+                    <ul>
+                        <li>Configuração avançada do sistema: parametrização completa de fretes, tabelas de preços, impostos (ICMS, ISS) e regras fiscais</li>
+                        <li>Integração sistêmica: conexão e sincronização de dados entre TMS e ERP Datasul (pedidos, notas fiscais, cadastros)</li>
+                        <li>Gestão de banco de dados: realização de ajustes diretos via SQL para correções e otimizações</li>
+                        <li>Suporte especializado: resolução de problemas complexos e treinamento de usuários</li>
+                    </ul>
+                    <p>Experiência prática no suporte diário aos usuários e operação do sistema.</p>
+                `
+            },
+            autocad: {
+                title: "AutoCAD",
+                icon: '<i class="fas fa-ruler-combined"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Ferramenta de CAD que utilizo para projetos técnicos precisos:</p>
+                    <ul>
+                        <li>Desenho de plantas arquitetônicas em 2D</li>
+                        <li>Desenvolvimento de projetos elétricos e hidráulicos</li>
+                        <li>Criação de detalhes construtivos</li>
+                        <li>Modelagem 3D básica de elementos arquitetônicos</li>
+                        <li>Configuração de layouts e impressão profissional</li>
+                    </ul>
+                    <p>Utilizado em projetos acadêmicos e profissionais na área de edificações.</p>
+                `
+            },
+            sketchup: {
+                title: "SketchUp",
+                icon: '<i class="fas fa-cube"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Ferramenta de modelagem 3D que domino para visualização arquitetônica:</p>
+                    <ul>
+                        <li>Modelagem volumétrica de edificações</li>
+                        <li>Criação de cenários e contextos urbanos</li>
+                        <li>Utilização de componentes dinâmicos</li>
+                        <li>Renderização básica com V-Ray</li>
+                        <li>Apresentação de projetos para clientes</li>
+                    </ul>
+                    <p>Utilizado para desenvolvimento de projetos acadêmicos e maquetes eletrônicas.</p>
+                `
+            },
+            "3dsmax": {
+                title: "3ds Max",
+                icon: '<i class="fas fa-cubes"></i>',
+                level: "Básico",
+                description: `
+                    <p>Software de modelagem 3D avançada que estou aprendendo:</p>
+                    <ul>
+                        <li>Modelagem poligonal básica</li>
+                        <li>Aplicação de materiais e texturas</li>
+                        <li>Configuração de iluminação simples</li>
+                        <li>Renderização básica with Scanline</li>
+                        <li>Criação de animações simples</li>
+                    </ul>
+                    <p>Conhecimento inicial adquirido em cursos e projetos pessoais de aprendizagem.</p>
+                `
+            }
+        };
+
+        // Controle da animação refinada
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalOverlay = document.getElementById('knowledgeModal');
+            const modalContent = document.querySelector('.knowledge-modal-content');
+            const closeBtn = document.querySelector('.knowledge-modal-close');
+            const knowledgeCards = document.querySelectorAll('.knowledge-card');
+            
+            knowledgeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const knowledgeId = this.getAttribute('data-knowledge');
+                    const knowledge = knowledgeDB[knowledgeId];
+                    
+                    if (knowledge) {
+                        // Cria um clone do card para animação
+                        const cardClone = document.createElement('div');
+                        cardClone.className = 'card-clone';
+                        
+                        // Copia o conteúdo do card original
+                        cardClone.innerHTML = this.innerHTML;
+                        
+                        // Obtém a posição do card original
+                        const rect = this.getBoundingClientRect();
+                        
+                        // Posiciona o clone exatamente sobre o card original
+                        cardClone.style.width = `${rect.width}px`;
+                        cardClone.style.height = `${rect.height}px`;
+                        cardClone.style.top = `${rect.top}px`;
+                        cardClone.style.left = `${rect.left}px`;
+                        
+                        document.body.appendChild(cardClone);
+                        
+                        // Prepara o modal
+                        document.getElementById('modalIcon').innerHTML = knowledge.icon;
+                        document.getElementById('modalTitle').textContent = knowledge.title;
+                        document.getElementById('modalLevel').textContent = knowledge.level;
+                        document.getElementById('modalBody').innerHTML = knowledge.description;
+                        
+                        // Desabilita o scroll da página
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Ativa a animação do clone
+                        setTimeout(() => {
+                            cardClone.style.top = '50%';
+                            cardClone.style.left = '50%';
+                            cardClone.style.transform = 'translate(-50%, -50%)';
+                            cardClone.style.width = '90%';
+                            cardClone.style.height = 'auto';
+                            cardClone.style.maxWidth = '800px';
+                            cardClone.style.maxHeight = '90vh';
+                            cardClone.style.borderRadius = '20px';
+                            cardClone.style.backgroundColor = 'rgba(31, 55, 201, 0.2)';
+                            cardClone.style.border = '1px solid var(--accent)';
+                            cardClone.style.boxShadow = '0 15px 50px rgba(76, 201, 240, 0.3)';
+                            cardClone.style.padding = '40px';
+                            
+                            // Mostra o overlay gradualmente
+                            modalOverlay.classList.add('active');
+                            
+                            // Quando a animação do clone terminar
+                            setTimeout(() => {
+                                // Remove o clone
+                                cardClone.remove();
+                                
+                                // Mostra o conteúdo completo do modal
+                                modalContent.style.opacity = '1';
+                                modalContent.style.transform = 'scale(1)';
+                            }, 600);
+                        }, 10);
+                    }
+                });
+            });
+            
+            // Fecha o modal
+            closeBtn.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+            
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+                modalContent.style.opacity = '0';
+                modalContent.style.transform = 'scale(0.8)';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Fecha com ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            
+            // Filtro de conhecimentos
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    knowledgeCards.forEach(card => {
+                        const categories = card.getAttribute('data-category') ? 
+                                        card.getAttribute('data-category').split(',') : 
+                                        [];
+                        
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.6s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Animação de entrada dos cards
+            function animateCards() {
+                knowledgeCards.forEach((card, index) => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (cardTop < windowHeight * 0.8) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            setTimeout(animateCards, 500);
+            window.addEventListener('scroll', animateCards);
+        });
+
+        // Script para animação ao scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            function checkVisibility() {
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (itemTop < windowHeight * 0.8) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Verifica na carga inicial
+            checkVisibility();
+            
+            // Verifica durante o scroll
+            window.addEventListener('scroll', checkVisibility);
+        });
+    </script>
+    
+    <script src="header.js" defer></script>
+</section> 
+
+<!--FIm Sobre-->
+
+
+<!--inicio de projetos-->
+<section id="projetos" class="projects-inicio">
+
+        
+    <!-- Grid de Projetos -->
+    <section class="projects-hero">
+        <div class="container">
+            <h1>Meus Projetos</h1>
+            <p>Explore meu trabalho criativo e técnico. Cada projeto representa um desafio único e uma solção inovadora.</p>
+        </div>
+         <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="c++">C++</button>
+                <button class="filter-btn" data-filter="node.js">Node.js</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
+        <div class="container">
+            <div class="projects-grid">
+               <!-- Projeto Destaque: project-card featured-project -->
+
+                <!-- FreeGaze -->
+                <div class="project-card" data-category="python,c++">
+                    <div class="project-image">
+                        <img src="image/FreeGaze.jpg" alt="Site informativo">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Raspberry Pi</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">FreeGaze</h2>
+                        <p class="project-description">
+                            Desenvolvido para revolucionar a acessibilidade digital, o FreeGaze é um sistema inovador de automação residencial controlado inteiramente por movimentos oculares, destinado a oferecer independência a pessoas com deficiências motoras severas. Utilizando uma combinação de visão computacional (OpenCV) e hardware embarcado (Raspberry Pi), a solução permite o controle preciso de iluminação, eletrodomésticos e dispositivos IoT sem exigir comandos de voz ou interação física.
+                        </p>
+                        <div class="project-buttons">
+                           <!-- 
+                            <a href="#" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                            -->     
+                            <a href="https://github.com/EdsonVST/FreeGaze" class="btn btn-secondary" >
+                                <i class="fab fa-github"></i> Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- E-Eco -->
+                <div class="project-card" data-category="web,node.js">
+                    <div class="project-image">
+                        <img src="image/E-Eco.png" alt="pagina do sit">
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">ProtgreSQL</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">E-Eco</h2>
+                        <p class="project-description">
+                           O E-Eco é uma plataforma web inovadora que promove a economia circular de dispositivos eletrônicos, conectando doadores, receptores e reparadores em um ecossistema colaborativo. Desenvolvida em Node.js, a solução combate o descarte inadequado de e-lixo ao incentivar a reutilização, reparo e reciclagem de forma gamificada, tornando a sustentabilidade acessível e recompensadora.
+                        </p>
+                        
+                        <div class="project-buttons">
+                            <a href="https://github.com/EdsonVST/web-frontend" class="btn btn-secondary" target="_blank">
+                                <i class="fab fa-github"></i> Código Frontend
+                            </a>
+                            <a href="https://github.com/dangerprogrammer/web-backend" class="btn btn-secondary" target="_blank">
+                                <i class="fab fa-github"></i> Código Backend
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semáforo adaptativo -->
+                <div class="project-card" data-category="c++">
+                    <div class="project-image">
+                        <img src="image/semaforo.png" alt="Dashboard Analytics">
+                        <div class="project-tags">
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Arduino </span>
+                            <span class="project-tag">API</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">Semáforo adaptativo</h2>
+                        <p class="project-description">
+                           Sistema de semáforos inteligentes e adaptativos utilizando Arduino e Tinkercad, projetado para otimizar o fluxo de veículos em cruzamentos urbanos e reduzir congestionamentos. O protótipo emprega sensores simulados (como detectores de presença ou contagem de veículos) para monitorar o tráfego em tempo real e ajustar dinamicamente os tempos dos sinais, priorizando vias com maior movimento.
+                        </p>
+                        
+                        <div class="project-buttons">
+                            <a href="https://www.tinkercad.com/things/eKPnl0QGhBf-copy-of-semaforo/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                            <a href="https://github.com/EdsonVST/Sem-foro_adaptativo" class="btn btn-secondary" target="_blank">
+                                <i class="fab fa-github"></i> Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Mascote do Android -->
+              <!--   <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="image/Android_Mascote.png" alt="Site informativo">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">Mascote do Android</h2>
+                        <p class="project-description">
+                            Este site apresenta a história completa do mascote Android, desde sua concepção até se tornar um ícone global. Com layout organizado e ilustrações, explica a origem do robô verde e sua evolução. Detalha curiosidades sobre as versões nomeadas com doces e o papel do designer Irina Blok. O destaque fica para a criação do Bugdroid, símbolo atual do sistema. O design clean e informativo torna a experiência de leitura fluida e acessível. Uma ótima fonte para entusiastas de tecnologia e curiosos sobre cultura digital. O projeto demonstra ainda habilidades em HTML/CSS, unindo conteúdo e técnica de forma harmoniosa.
+                        </p>
+                        <div class="project-buttons">
+                            <a href="https://edsonvst.github.io/HTML_CSS/Exercicios/Android_Mascote/Android..html" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                            <a href="https://github.com/EdsonVST/HTML_CSS/tree/main/Exercicios/Android_Mascote" class="btn btn-secondary" >
+                                <i class="fab fa-github"></i> Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+-->
+                <!-- Cordel Moderno -->
+
+                <!--  <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="image/Cordel_Moderno.png" alt="Site informativo">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">Cordel Moderno</h2>
+                        <p class="project-description">
+                            Este site apresenta o poema Cordel Moderno, de Milton Duarte, com um design que mistura tradição e inovação. Através de efeitos visuais e parallax, o texto ganha vida, fundindo literatura popular e estética digital. Uma experiência imersiva que celebra a cultura nordestina no universo web.
+                        </p>
+                        <div class="project-buttons">
+                            <a href="https://edsonvst.github.io/HTML_CSS/Exercicios/Cordel_Moderno/index.html" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                            <a href="https://github.com/EdsonVST/HTML_CSS/tree/main/Exercicios/Cordel_Moderno" class="btn btn-secondary" target="_blank">
+                                <i class="fab fa-github"></i> Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+-->
+                
+             
+            
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <script>
+        // Filtro de projetos funcional
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove a classe active de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adiciona a classe active ao botão clicado
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filtra os projetos
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-category').split(',');
+                        
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.style.display = 'flex';
+                            card.style.animation = 'fadeIn 0.6s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    // Reorganiza o grid para projetos em destaque
+                    rearrangeFeaturedProjects();
+                });
+            });
+            
+            // Animação de flutuação para os cards
+            projectCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                card.addEventListener('mouseenter', function() {
+                    this.style.animation = 'float 3s ease-in-out infinite';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.animation = '';
+                });
+            });
+            
+            // Função para reorganizar projetos em destaque após filtragem
+            function rearrangeFeaturedProjects() {
+                const visibleFeaturedProjects = document.querySelectorAll('.project-card.featured-project[style="display: flex;"]');
+                
+                visibleFeaturedProjects.forEach(project => {
+                    // Verifica se o projeto está visível e é destacado
+                    if (project.style.display === 'flex' && project.classList.contains('featured-project')) {
+                        // Remove o destaque se for o único projeto visível na categoria
+                        const category = project.getAttribute('data-category');
+                        const visibleProjectsInCategory = document.querySelectorAll(`.project-card[data-category*="${category}"][style="display: flex;"]`);
+                        
+                        if (visibleProjectsInCategory.length === 1) {
+                            project.classList.remove('featured-project');
+                            project.style.gridColumn = '';
+                            project.style.gridTemplateColumns = '';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+<script src="header.js" defer></script>
+</section>
+ <!-- FIM -->
+
+ <!--inicio contatos-->
+<section id="contatos">
+
+
+    <!-- Seção de Contato Direta -->
+    <section class="direct-contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            
+            <div class="contact-grid">
+                <!-- Cartão Email -->
+                <div class="contact-card" style="animation-delay: 0.1s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-info">edsontaveir@gmail.com</p>
+                    <a href="mailto:edsontaveir@gmail.com" class="contact-link">Enviar Mensagem</a>
+                </div>
+                
+                <!-- Cartão Telefone -->
+                <div class="contact-card" style="animation-delay: 0.2s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <p class="contact-info">(15) 99833-4291</p>
+                    <a href="https://wa.me/5515998334291" target="_blank" class="contact-link">Enviar Mensagem</a>
+                </div>
+                
+                <!-- Cartão Agenda -->
+                <div class="contact-card" style="animation-delay: 0.3s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Agendar Reunião</h3>
+                    <p class="contact-info">Disponível para chamadas e reuniões</p>
+                    <a href="https://calendly.com/edsontaveir" target="_blank" class="contact-link">Agendar Horário</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção de Formulário 
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h3 class="form-title">Ou envie uma mensagem direta</h3>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" class="form-control" placeholder="Seu nome completo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Sobre o que deseja falar?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" class="form-control" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- Seção Redes Sociais -->
+    <section class="social-section">
+        <div class="container">
+            <h3 class="social-title">Conecte-se nas Redes Sociais</h3>
+            <p class="social-subtitle">Acompanhe meus projetos e atualizações profissionais</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/EdsonVST" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/edson-vinicio-silva-459675298/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                </a>
+                <!-- <a href="https://www.instagram.com/edson_vinicio/" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                 -->
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animação ao rolar
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.contact-card, .form-container');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Executa uma vez ao carregar
+            
+            // Simulação de envio do formulário
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                    this.reset();
+                });
+            }
+        });
+    </script>
+    <script src="header.js" defer></script>
+</section>
+<!--FIm contatos-->
+
+<!--inicio index-->
+<section id="index">
+<!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>Vamos trabalhar juntos?</p>
+            <div class="footer-links">
+                <a href="mailto:edson.ti.trabalho@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/edson-vinicio-silva-459675298/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/EdsonVST" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="contatos.html"><i class="fas fa-phone-alt"></i></a>
+            </div>
+            <p class="copyright">© <span id="year"></span> Edson V. S. T. Silva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+  
+
+
+    <script>
+        // Atualiza o ano no copyright
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Efeito de navbar ao rolar
+        const header = document.querySelector('header');
+        const heroSection = document.querySelector('.hero-section');
+        
+        const headerScrollEffect = () => {
+            if (window.scrollY > heroSection.offsetHeight * 0.2) {
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.2)';
+            } else {
+                header.style.background = 'rgba(67, 97, 238, 0.95)';
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+            }
+        };
+        
+        window.addEventListener('scroll', headerScrollEffect);
+        headerScrollEffect();
+    </script>
+</section>    
+<!--FIm index-->
+
+</body>
+</html>

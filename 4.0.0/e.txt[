@@ -1,0 +1,16 @@
+portfolio/
+├── index.html
+├── css/
+│   ├── style.css
+│   ├── header.css
+│   ├── hero.css
+│   ├── about.css
+│   ├── skills.css
+│   ├── projects.css
+│   ├── contact.css
+│   └── footer.css
+├── js/
+│   ├── main.js
+│   └── navigation.js
+└── images/
+    └── (imagens)

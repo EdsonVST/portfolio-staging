@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim | Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="header.css">
+    <style>
+        /* Variáveis de cor */
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #4cc9f0;
+        }
+        
+        /* Reset e Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+    #sobre    .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+    #sobre    section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+     #sobre   a {
+            color: white;
+        }
+        
+        /* Seção Hero Sobre Mim */
+    #sobre    .about-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 180px 0 100px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -50px;
+        }
+        
+    #sobre    .about-hero .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+    #sobre    .profile-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: rotate(-5deg);
+            transition: all 0.5s ease;
+            animation: fadeIn 1s ease-out;
+        }
+        
+     #sobre   .profile-image:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+        
+     #sobre   .hero-content {
+            flex: 1;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+        
+     #sobre   .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+    #sobre    .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+    #sobre    .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+    #sobre    .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+    #sobre    .tag:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+        
+     #sobre   .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+    #sobre    .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+     #sobre   .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        /* Seção Minha Jornada */
+    #sobre    .journey-section {
+            padding-top: 50px;
+        }
+        
+    #sobre    .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+        
+    #sobre    .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        
+    #sobre    .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+    #sobre    .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 10px;
+        }
+        
+    #sobre    .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            animation: fadeIn 0.6s ease-out;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+        
+    #sobre    .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    #sobre    .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 80px;
+            text-align: right;
+        }
+        
+    #sobre    .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 80px;
+        }
+        
+    #sobre    .timeline-item:nth-child(even) .timeline-content {
+            margin-left: -10%;
+        }
+
+    #sobre    .timeline-content {
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.4s ease;
+            width: 120%; 
+            margin-left: -10%;
+        }
+        
+   #sobre     .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+    #sobre    .timeline-date {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+    #sobre    .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+    #sobre    .timeline-company {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+    #sobre    .timeline-desc {
+            text-align: justify;
+            text-indent: 30px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+    #sobre    .timeline-desc-p{
+            text-align: justify;
+            text-indent: 30px;
+        }
+        
+    #sobre    .timeline-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: var(--primary);
+            font-size: 1.3rem;
+            top: 30px;
+            z-index: 1;
+        }
+        
+    #sobre    .timeline-item:nth-child(odd) .timeline-icon {
+            right: -25px;
+        }
+        
+     #sobre   .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: -10%; 
+        }
+    #sobre    .timeline-item:nth-child(even) .timeline-icon {
+            left: -25px;
+        }
+        
+        /* Seção de Conhecimentos */
+    #sobre    .knowledge-section {
+            background: var(--dark);
+            color: white;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+            padding: 150px 0 100px;
+            margin-top: -50px;
+        }
+        
+    #sobre    .knowledge-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+    #sobre    .knowledge-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+    #sobre    .knowledge-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+    #sobre    .knowledge-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+    #sobre    .knowledge-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+    #sobre    .knowledge-level {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Modal de Conhecimentos */
+    #sobre    .knowledge-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(26, 26, 46, 0);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, background-color 0.4s ease;
+            padding: 20px;
+        }
+        
+    #sobre    .knowledge-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            background-color: rgba(26, 26, 46, 0.95);
+        }
+        
+    #sobre    .knowledge-modal-content {
+            background: rgba(31, 55, 201, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--accent);
+            box-shadow: 0 15px 50px rgba(76, 201, 240, 0.3);
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.4s ease;
+            position: relative;
+        }
+        
+    #sobre    .knowledge-modal-overlay.active .knowledge-modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+    #sobre    .knowledge-modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(76, 201, 240, 0.3);
+            padding-bottom: 20px;
+        }
+        
+    #sobre    .knowledge-modal-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-right: 25px;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+    #sobre    .knowledge-modal-title {
+            font-size: 2.2rem;
+            color: white;
+            margin: 0;
+        }
+        
+    #sobre    .knowledge-modal-level {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+    #sobre    .knowledge-modal-body {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+    #sobre    .knowledge-modal-body p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+    #sobre    .knowledge-modal-body ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+    #sobre    .knowledge-modal-body li {
+            margin-bottom: 8px;
+        }
+        
+    #sobre    .knowledge-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+    #sobre    .knowledge-modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        /* Filtros */
+     #sobre   .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+        
+    #sobre    .filter-btn {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+     #sobre   .filter-btn.active {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Efeito de clone para animação */
+     #sobre   .card-clone {
+            position: fixed;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 992px) {
+    #sobre        .about-hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+    #sobre        .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+            
+    #sobre        .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+    #sobre        .tag-list {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+    #sobre        .timeline::before {
+                left: 40px;
+            }
+            
+    #sobre        .timeline-item {
+                width: 100%;
+                padding-left: 90px;
+                padding-right: 20px;
+            }
+            
+     #sobre       .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+    #sobre        .timeline-item:nth-child(odd) {
+                text-align: left;
+                padding-right: 20px;
+            }
+            
+     #sobre       .timeline-item:nth-child(odd) .timeline-icon,
+    #sobre        .timeline-item:nth-child(even) .timeline-icon {
+                left: 15px;
+                right: auto;
+            }
+            
+    #sobre        .knowledge-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+     #sobre       .knowledge-modal-content {
+                padding: 30px 20px;
+                width: 95%;
+            }
+            
+     #sobre       .knowledge-modal-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+    #sobre        .knowledge-modal-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+                font-size: 2.5rem;
+            }
+            
+     #sobre       .knowledge-modal-title {
+                font-size: 1.8rem;
+            }
+            
+    #sobre        .knowledge-modal-body {
+                font-size: 1rem;
+            }
+            
+     #sobre       .goal-card {
+                padding: 30px 20px;
+            }
+            
+     #sobre       .goal-title {
+                font-size: 1.5rem;
+            }
+            
+     #sobre       .goal-desc {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Ajustando os delays para animação em sequência */
+    #sobre    .timeline-item:nth-child(1) { transition-delay: 0.1s; }
+    #sobre    .timeline-item:nth-child(2) { transition-delay: 0.3s; }
+    #sobre    .timeline-item:nth-child(3) { transition-delay: 0.5s; }
+     #sobre   .timeline-item:nth-child(4) { transition-delay: 0.7s; }
+
+
+        /* Adicionar no header.css ou no estilo interno */
+@media (max-width: 480px) {
+ #sobre   nav {
+        padding: 0.8rem 1rem;
+    }
+    
+ #sobre   .nav-links {
+        gap: 0.5rem;
+    }
+    
+#sobre    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+    }
+    
+#sobre    .logo {
+        font-size: 1rem;
+    }
+    
+#sobre    .logo-icon {
+        font-size: 1rem;
+    }
+}
+
+/* Adicionar na seção de media queries existente */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+#sobre  .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+#sobre   .tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+#sobre .knowledge-card {
+        padding: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<section id="sobre">   
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <span>EdsonVST</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre_mim.html" class="active">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contatos.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Seção Hero Sobre Mim -->
+    <section class="about-hero">
+        <div class="container">
+            <img src="image/edson.jpg" alt="Edson Vinicio" class="profile-image">
+            <div class="hero-content">
+                <h1>Desenvolvedor Fullstack</h1>
+                <p class="timeline-desc-p">Estudante do 6° semestre de Engenharia da Computação pela <a href="https://facens.br/" target="_blank" class="timeline-desc-p" >Facens</a>, encontro na tecnologia, o motor para transformar desafios em soluções inovadoras. Minha paixão por lógica, aliada à crescente experiência em desenvolvimento de software e análise de dados, me permite explorar as últimas tendências e criar aplicações que realmente façam a diferença.</p>
+                
+                <div class="tag-list">
+                    <span class="tag">Analista de Dados</span>
+                    <span class="tag">Técnico de Suporte</span>
+                    <span class="tag">Desenvolvedor</span>
+                    <span class="tag">Técnico de Edificações</span>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/EdsonVST" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/edson-vinicio-silva-459675298/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="https://www.instagram.com/edson_vinicio/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Minha Jornada -->
+    <section class="journey-section">
+        <div class="container">
+            <h2 class="section-title">Minha Jornada</h2>
+            
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019 - 2021</span>
+                        <h3 class="timeline-title">Edificações</h3>
+                        <span class="timeline-company">Curso Técnico</span>
+                        <p class="timeline-desc">Está formação me proporcionou um conhecimento robusto em criação de projetos <b>(AutoCAD, SketchUp)</b>, gestão e normas técnicas (ABNT/NRs). A vivência prática em <b>topografia</b> e <b>controle de qualidade</b> consolidou esse aprendizado teórico, e foi nesse ambiente dinâmico que meu interesse por desafios criativos e soluções inovadoras floresceu. Ali, minhas habilidades comunicativas e comportamentais foram aprimoradas ao máximo, representando um ponto crucial no meu desenvolvimento pessoal.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2022</span>
+                        <h3 class="timeline-title">Auxiliar de Montagem e Instalação</h3>
+                        <span class="timeline-company">Esquadriclass</span>
+                        <p class="timeline-desc">Durante minha atuação na Esquadriclass, ganhei experiência prática em produção industrial e implementei sistemas de controle através de planilhas avançadas. Essa experiência multidisciplinar fortaleceu minha comunicação e colaboração em equipe. Além disso, essa vivência aguçou minha visão sobre como a tecnologia pode revolucionar processos industriais, alimentando minha paixão pela área tech e motivando minha jornada para a Engenharia da Computação.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Presente</span>
+                        <h3 class="timeline-title">Engenharia de Computação</h3>
+                        <span class="timeline-company">Formação Acadêmica</span>
+                        <p class="timeline-desc">A Engenharia da Computação tem sido fundamental na minha evolução como desenvolvedor, permitindo um aprofundamento constante em programação, sistemas embarcados e análise de dados. Por meio de projetos acadêmicos desafiadores, estou construindo um conjunto de habilidades práticas essenciais para converter problemas complexos em soluções tecnológicas inovadoras, o que reforça minha paixão pelo desenvolvimento de software e data science.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - Presente</span>
+                        <h3 class="timeline-title">Suporte Técnico</h3>
+                        <span class="timeline-company">Diamond Office</span>
+                        <p class="timeline-desc">Na Diamond, sou responsável pela gestão completa do TMS, incluindo configuração, troubleshooting avançado, correções em banco de dados e controle de servidor, assegurando a integração fluida com os demais sistemas. Também presto suporte técnico especializado aos sistemas Datasul, RM e Gládios, com profundo conhecimento em processos fiscais e resolução de problemas de software. Minhas atividades abrangem a documentação de incidentes e a implementação de melhorias contínuas, focando em um atendimento ao cliente eficaz e no desenvolvimento constante de soluções de TI.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Conhecimentos Técnicos -->
+    <section class="knowledge-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Conhecimentos Técnicos</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="Programação">Programação</button>
+                <button class="filter-btn" data-filter="Sistemas">Sistemas</button>
+                <button class="filter-btn" data-filter="Software">Software</button>
+                <button class="filter-btn" data-filter="Escritório">Escritório</button>
+            </div>
+            
+            <div class="knowledge-container">
+                <!-- Python -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="python">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-python"></i></div>
+                        <h3 class="knowledge-title">Python</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- Java -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="java">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-java"></i></div>
+                        <h3 class="knowledge-title">Java</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="javascript">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-js"></i></div>
+                        <h3 class="knowledge-title">JavaScript</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- SQL -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="sql">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-database"></i></div>
+                        <h3 class="knowledge-title">SQL</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- C -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="c">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="knowledge-title">C</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <!-- C++ -->
+                <div class="knowledge-card" data-category="Programação" data-knowledge="cc">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="knowledge-title">C++</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card" data-category="Programação" data-knowledge="html">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-html5"></i></div>
+                        <h3 class="knowledge-title">HTML5</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+
+                 <div class="knowledge-card" data-category="Programação" data-knowledge="css">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3 class="knowledge-title">CSS3</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card" data-category="Programação" data-knowledge="api">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cloud"></i></div>
+                        <h3 class="knowledge-title">API</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card" data-category="Programação" data-knowledge="github">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fab fa-github"></i></div>
+                        <h3 class="knowledge-title">GitHub</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- Arduino -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="arduino">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-microchip"></i></div>
+                        <h3 class="knowledge-title">Arduino</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+
+                <!-- Power BI -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="bi">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="knowledge-title">Power BI</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- Pacote Office -->
+                <div class="knowledge-card" data-category="Escritório" data-knowledge="office">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-file-excel"></i></div>
+                        <h3 class="knowledge-title">Pacote Office</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- Datasul -->
+                <div class="knowledge-card" data-category="Sistemas" data-knowledge="datasul">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-industry"></i></div>
+                        <h3 class="knowledge-title">Datasul</h3>
+                        <p class="knowledge-level">Intermediário</p>
+                    </div>
+                </div>
+                
+                <!-- RM -->
+                <div class="knowledge-card" data-category="Sistemas" data-knowledge="rm">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="knowledge-title">RM</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+                
+                <!-- TMS -->
+                <div class="knowledge-card" data-category="Sistemas" data-knowledge="tms">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-truck"></i></div>
+                        <h3 class="knowledge-title">TMS</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- AutoCAD -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="autocad">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-ruler-combined"></i></div>
+                        <h3 class="knowledge-title">AutoCAD</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- SketchUp -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="sketchup">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cube"></i></div>
+                        <h3 class="knowledge-title">SketchUp</h3>
+                        <p class="knowledge-level">Avançado</p>
+                    </div>
+                </div>
+                
+                <!-- 3ds Max -->
+                <div class="knowledge-card" data-category="Software" data-knowledge="3dsmax">
+                    <div class="knowledge-card-front">
+                        <div class="knowledge-icon"><i class="fas fa-cubes"></i></div>
+                        <h3 class="knowledge-title">3ds Max</h3>
+                        <p class="knowledge-level">Básico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal de Conhecimentos -->
+    <div id="knowledgeModal" class="knowledge-modal-overlay">
+        <div class="knowledge-modal-content">
+            <span class="knowledge-modal-close">&times;</span>
+            <div class="knowledge-modal-header">
+                <div class="knowledge-modal-icon" id="modalIcon"></div>
+                <div>
+                    <h2 class="knowledge-modal-title" id="modalTitle"></h2>
+                    <span class="knowledge-modal-level" id="modalLevel"></span>
+                </div>
+            </div>
+            <div class="knowledge-modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        // Banco de dados de conhecimentos com descrições detalhadas
+        const knowledgeDB = {
+            python: {
+                title: "Python",
+                icon: '<i class="fab fa-python"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Minha principal ferramenta para análise de dados e automação de processos. Tenho experiência com:</p>
+                    <ul>
+                        <li>Desenvolvimento de scripts para tratamento e análise de grandes volumes de dados</li>
+                        <li>Criação de APIs REST com Flask e FastAPI</li>
+                        <li>Automação de tarefas repetitivas e extração de dados de diversas fontes</li>
+                        <li>Implementação de algoritmos de machine learning básicos</li>
+                        <li>Integração com bancos de dados relacionais e NoSQL</li>
+                    </ul>
+                    <p>Utilizo frequentemente bibliotecas como Pandas, NumPy, Matplotlib e Requests para resolver problemas complexos de forma eficiente.</p>
+                `
+            },
+            java: {
+                title: "Java",
+                icon: '<i class="fab fa-java"></i>',
+                level: "Básico",
+                description: `
+                    <p>Linguagem que estou aprendendo para desenvolver aplicativos:</p>
+                    <ul>
+                        <li>Noções básicas de sintaxe e estrutura da linguagem</li>
+                        <li>Programação Orientada a Objetos (POO): Classes, objetos, métodos, encapsulamento e herança simples</li>
+                        <li>Aplicações simples: Jogos e programas de console como calculadoras e sistemas de cadastro básico</li>
+                        <li>Tratamento de erros: Uso de try-catch para lidar com exceções</li>
+                        <li>Coleções: Introdução a ArrayList e HashMap para armazenar dados</li>
+                    </ul>
+                    <p>Atualmente, estou praticando com pequenos projetos para consolidar os fundamentos e evoluir para aplicações mais complexas.</p>
+                `
+            },
+            javascript: {
+                title: "JavaScript",
+                icon: '<i class="fab fa-js"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>A linguagem que me permite criar experiências web interativas e dinâmicas:</p>
+                    <ul>
+                        <li>Desenvolvimento front-end com manipulação do DOM e eventos</li>
+                        <li>Consumo de APIs REST/GraphQL para aplicações web modernas</li>
+                        <li>Implementação de lógica de interface complexa</li>
+                        <li>Validação de formulários e feedback ao usuário</li>
+                        <li>Conhecimento em ES6+ e padrões modernos de JavaScript</li>
+                    </ul>
+                    <p>Utilizo JavaScript para tornar interfaces estáticas em experiências ricas e responsivas.</p>
+                `
+            },
+            sql: {
+                title: "SQL",
+                icon: '<i class="fas fa-database"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Minha ferramenta essencial para trabalhar com bancos de dados relacionais:</p>
+                    <ul>
+                        <li>Modelagem e normalização de bancos de dados</li>
+                        <li>Criação de queries complexas com múltiplos joins</li>
+                        <li>Otimização de consultas para melhor desempenho</li>
+                        <li>Implementação de stored procedures e triggers</li>
+                        <li>Exportação e importação de dados</li>
+                    </ul>
+                    <p>Experiência prática com MySQL, SQL Server e SQLite em projetos acadêmicos.</p>
+                `
+            },
+            c: {
+                title: "C",
+                icon: '<i class="fas fa-code"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Minha primeira linguagem de programação, utilizada para desenvolvimento de sistemas:</p>
+                    <ul>
+                        <li>Manipulação de ponteiros e gerenciamento manual de memória</li>
+                        <li>Desenvolvimento de algoritmos eficientes e estruturas de dados</li>
+                        <li>Interação com hardware e sistemas embarcados</li>
+                        <li>Uso de bibliotecas padrão para entrada/saída e manipulação de arquivos</li>
+                    </ul>
+                    <p>Utilização em projetos educacionais para compreensão de conceitos fundamentais de computação, desde o baixo nível até abstrações mais complexas.</p>
+                `
+            },
+            cc: {
+                title: "C++",
+                icon: '<i class="fas fa-code"></i>',
+                level: "Básico",
+                description: `
+                    <p>Minha primeira linguagem de programação, utilizada para desenvolvimento de sistemas:</p>
+                    <ul>
+                        <li>Manipulação de ponteiros e gerenciamento manual de memória</li>
+                        <li>Desenvolvimento de algoritmos eficientes e estruturas de dados</li>
+                        <li>Interação com hardware e sistemas embarcados</li>
+                        <li>Uso de bibliotecas padrão para entrada/saída e manipulação de arquivos</li>
+                    </ul>
+                    <p>Utilização em projetos educacionais para compreensão de conceitos fundamentais de computação, desde o baixo nível até abstrações mais complexas.</p>
+                `
+            },
+
+            html: {
+                title: "HTML5",
+                icon: '<i class="fab fa-html5"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Domínio completo da linguagem de marcação para construção de interfaces web profissionais:</p>
+                    <ul>
+                        <li>Estruturação otimizada para SEO com tags semânticas (article, section, nav, etc..)</li>
+                        <li>Templates dinâmicos para CMS (WordPress, Drupal)</li>
+                        <li>Integração com JavaScript (data attributes, DOM manipulation)</li>
+                        <li>HTML modular e reutilizável</li>
+                    </ul>
+                    <p>Transformo designs complexos em HTML eficiente, com foco em semântica, performance e acessibilidade.</p>
+                `
+            },
+
+            css: {
+                title: "CSS3",
+                icon: '<i class="fab fa-css3-alt"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Conhecimento sólido em estilização web com capacidade de implementar layouts responsivos e efeitos visuais:</p>
+                    <ul>
+                        <li>Criação de UI components (buttons, modals, tooltips)</li>
+                        <li>Estilização de formulários acessíveis</li>
+                        <li>Landing pages responsivas</li>
+                        <li>Animações e transições CSS (keyframes, transform)</li>
+                    </ul>
+                    <p>Transformo designs em código mantível, com foco em organização e adaptabilidade.</p>
+                `
+            },
+            api: {
+                title: "API",
+                icon: '<i class="fas fa-cloud"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Desenvolvimento e integração de APIs para conectar sistemas e serviços: </p>
+                    <ul>
+                        <li>Criação de APIs RESTful</li>
+                        <li>Autenticação e autorização (JWT, OAuth2, API Keys)</li>
+                        <li>Consumo de APIs externas (Google Maps, Telegram, Pagamentos, etc.)</li>
+                        <li>Testes de endpoints (Postman, Insomnia)</li>
+                        <li>Integração com front-end e IoT</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos e integrações com IoT (Arduino + APIs).</p>
+                `
+            },
+            github: {
+                title: "GitHub",
+                icon: '<i class="fab fa-github"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Plataforma de versionamento e colaboração para projetos de código e hardware:</p>
+                    <ul>
+                        <li>Controle de versão com Git (branching, merging, rebase)</li>
+                        <li>Gerenciamento de repositórios públicos e privados</li>
+                        <li>GitHub Pages para hospedagem de projetos</li>
+                        <li>Colaboração em equipe (issues, pull requests, code review)</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos e colaboração remota.</p>
+                `
+            },
+            arduino: {
+                title: "Arduino",
+                icon: '<i class="fas fa-microchip"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Plataforma que me permite prototipar soluções de hardware e IoT:</p>
+                    <ul>
+                        <li>Desenvolvimento de sistemas embarcados básicos</li>
+                        <li>Integração com sensores e atuadores diversos</li>
+                        <li>Comunicação serial com computadores</li>
+                        <li>Projetos de automação residencial simples</li>
+                        <li>Monitoramento ambiental com coleta de dados</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos envolvendo controle de dispositivos e automação.</p>
+                `
+            },
+            bi: {
+                title: "Power Bi",
+                icon: '<i class="fas fa-chart-line"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Ferramenta de análise e visualização de dados que permite transformar informações em insights acionáveis:</p>
+                    <ul>
+                        <li>Criação de dashboards interativos e relatórios dinâmicos</li>
+                        <li>Transformação e limpeza de dados usando Power Query</li>
+                        <li>Modelagem de dados e criação de medidas com DAX</li>
+                        <li>Integração com diversas fontes de dados (Excel, SQL, APIs)</li>
+                        <li>Automação de atualizações e compartilhamento de relatórios</li>
+                    </ul>
+                    <p>Experiência em projetos de análise de dados para tomada de decisão empresarial.</p>
+                `
+            },
+            office: {
+                title: "Pacote Office",
+                icon: '<i class="fas fa-file-excel"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Suíte de produtividade que domino profundamente:</p>
+                    <ul>
+                        <li>Excel avançado com fórmulas complexas, tabelas dinâmicas e macros VBA</li>
+                        <li>Criação de documentos profissionais no Word com estilos e modelos</li>
+                        <li>Apresentações dinâmicas no PowerPoint com animações e design</li>
+                        <li>Automação de fluxos de trabalho entre aplicativos</li>
+                        <li>Criação de dashboards e relatórios analíticos</li>
+                    </ul>
+                    <p>Utilizo essas ferramentas diariamente para análise de dados e documentação profissional.</p>
+                `
+            },
+            datasul: {
+                title: "Datasul",
+                icon: '<i class="fas fa-industry"></i>',
+                level: "Intermediário",
+                description: `
+                    <p>Sistema ERP que utilizo no suporte técnico profissional:</p>
+                    <ul>
+                        <li>Gerenciamento de usuários e perfis de acesso</li>
+                        <li>Diagnóstico e correção de problemas funcionais no sistema</li>
+                        <li>Parametrização básica do sistema</li>
+                        <li>Extração de relatórios e dados</li>
+                        <li>Integração com outros sistemas corporativos</li>
+                    </ul>
+                    <p>Experiência prática no suporte diário aos usuários e manutenção do sistema.</p>
+                `
+            },
+            rm: {
+                title: "RM",
+                icon: '<i class="fas fa-cogs"></i>',
+                level: "Básico",
+                description: `
+                    <p>Sistema de gestão de relacionamento que domino no contexto profissional:</p>
+                    <ul>
+                        <li>Configuração e manutenção do sistema</li>
+                        <li>Gerenciamento de acessos e segurança</li>
+                        <li>Resolução de problemas e inconsistências</li>
+                        <li>Extração e análise de dados do sistema</li>
+                        <li>Integração com outros sistemas corporativos</li>
+                    </ul>
+                    <p>Atuação direta no suporte técnico e manutenção do sistema em ambiente profissional.</p>
+                `
+            },
+            tms: {
+                title: "TMS",
+                icon: '<i class="fas fa-truck"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Sistema de gerenciamento de transporte com que trabalho atualmente:</p>
+                    <ul>
+                        <li>Configuração avançada do sistema: parametrização completa de fretes, tabelas de preços, impostos (ICMS, ISS) e regras fiscais</li>
+                        <li>Integração sistêmica: conexão e sincronização de dados entre TMS e ERP Datasul (pedidos, notas fiscais, cadastros)</li>
+                        <li>Gestão de banco de dados: realização de ajustes diretos via SQL para correções e otimizações</li>
+                        <li>Suporte especializado: resolução de problemas complexos e treinamento de usuários</li>
+                    </ul>
+                    <p>Experiência prática no suporte diário aos usuários e operação do sistema.</p>
+                `
+            },
+            autocad: {
+                title: "AutoCAD",
+                icon: '<i class="fas fa-ruler-combined"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Ferramenta de CAD que utilizo para projetos técnicos precisos:</p>
+                    <ul>
+                        <li>Desenho de plantas arquitetônicas em 2D</li>
+                        <li>Desenvolvimento de projetos elétricos e hidráulicos</li>
+                        <li>Criação de detalhes construtivos</li>
+                        <li>Modelagem 3D básica de elementos arquitetônicos</li>
+                        <li>Configuração de layouts e impressão profissional</li>
+                    </ul>
+                    <p>Utilizado em projetos acadêmicos e profissionais na área de edificações.</p>
+                `
+            },
+            sketchup: {
+                title: "SketchUp",
+                icon: '<i class="fas fa-cube"></i>',
+                level: "Avançado",
+                description: `
+                    <p>Ferramenta de modelagem 3D que domino para visualização arquitetônica:</p>
+                    <ul>
+                        <li>Modelagem volumétrica de edificações</li>
+                        <li>Criação de cenários e contextos urbanos</li>
+                        <li>Utilização de componentes dinâmicos</li>
+                        <li>Renderização básica com V-Ray</li>
+                        <li>Apresentação de projetos para clientes</li>
+                    </ul>
+                    <p>Utilizado para desenvolvimento de projetos acadêmicos e maquetes eletrônicas.</p>
+                `
+            },
+            "3dsmax": {
+                title: "3ds Max",
+                icon: '<i class="fas fa-cubes"></i>',
+                level: "Básico",
+                description: `
+                    <p>Software de modelagem 3D avançada que estou aprendendo:</p>
+                    <ul>
+                        <li>Modelagem poligonal básica</li>
+                        <li>Aplicação de materiais e texturas</li>
+                        <li>Configuração de iluminação simples</li>
+                        <li>Renderização básica with Scanline</li>
+                        <li>Criação de animações simples</li>
+                    </ul>
+                    <p>Conhecimento inicial adquirido em cursos e projetos pessoais de aprendizagem.</p>
+                `
+            }
+        };
+
+        // Controle da animação refinada
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalOverlay = document.getElementById('knowledgeModal');
+            const modalContent = document.querySelector('.knowledge-modal-content');
+            const closeBtn = document.querySelector('.knowledge-modal-close');
+            const knowledgeCards = document.querySelectorAll('.knowledge-card');
+            
+            knowledgeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const knowledgeId = this.getAttribute('data-knowledge');
+                    const knowledge = knowledgeDB[knowledgeId];
+                    
+                    if (knowledge) {
+                        // Cria um clone do card para animação
+                        const cardClone = document.createElement('div');
+                        cardClone.className = 'card-clone';
+                        
+                        // Copia o conteúdo do card original
+                        cardClone.innerHTML = this.innerHTML;
+                        
+                        // Obtém a posição do card original
+                        const rect = this.getBoundingClientRect();
+                        
+                        // Posiciona o clone exatamente sobre o card original
+                        cardClone.style.width = `${rect.width}px`;
+                        cardClone.style.height = `${rect.height}px`;
+                        cardClone.style.top = `${rect.top}px`;
+                        cardClone.style.left = `${rect.left}px`;
+                        
+                        document.body.appendChild(cardClone);
+                        
+                        // Prepara o modal
+                        document.getElementById('modalIcon').innerHTML = knowledge.icon;
+                        document.getElementById('modalTitle').textContent = knowledge.title;
+                        document.getElementById('modalLevel').textContent = knowledge.level;
+                        document.getElementById('modalBody').innerHTML = knowledge.description;
+                        
+                        // Desabilita o scroll da página
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Ativa a animação do clone
+                        setTimeout(() => {
+                            cardClone.style.top = '50%';
+                            cardClone.style.left = '50%';
+                            cardClone.style.transform = 'translate(-50%, -50%)';
+                            cardClone.style.width = '90%';
+                            cardClone.style.height = 'auto';
+                            cardClone.style.maxWidth = '800px';
+                            cardClone.style.maxHeight = '90vh';
+                            cardClone.style.borderRadius = '20px';
+                            cardClone.style.backgroundColor = 'rgba(31, 55, 201, 0.2)';
+                            cardClone.style.border = '1px solid var(--accent)';
+                            cardClone.style.boxShadow = '0 15px 50px rgba(76, 201, 240, 0.3)';
+                            cardClone.style.padding = '40px';
+                            
+                            // Mostra o overlay gradualmente
+                            modalOverlay.classList.add('active');
+                            
+                            // Quando a animação do clone terminar
+                            setTimeout(() => {
+                                // Remove o clone
+                                cardClone.remove();
+                                
+                                // Mostra o conteúdo completo do modal
+                                modalContent.style.opacity = '1';
+                                modalContent.style.transform = 'scale(1)';
+                            }, 600);
+                        }, 10);
+                    }
+                });
+            });
+            
+            // Fecha o modal
+            closeBtn.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+            
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+                modalContent.style.opacity = '0';
+                modalContent.style.transform = 'scale(0.8)';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Fecha com ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            
+            // Filtro de conhecimentos
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    knowledgeCards.forEach(card => {
+                        const categories = card.getAttribute('data-category') ? 
+                                        card.getAttribute('data-category').split(',') : 
+                                        [];
+                        
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.6s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Animação de entrada dos cards
+            function animateCards() {
+                knowledgeCards.forEach((card, index) => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (cardTop < windowHeight * 0.8) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            setTimeout(animateCards, 500);
+            window.addEventListener('scroll', animateCards);
+        });
+
+        // Script para animação ao scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            function checkVisibility() {
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (itemTop < windowHeight * 0.8) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Verifica na carga inicial
+            checkVisibility();
+            
+            // Verifica durante o scroll
+            window.addEventListener('scroll', checkVisibility);
+        });
+    </script>
+    
+    <script src="header.js" defer></script>
+</section> 
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* Seção Contato */
+.contact-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+    padding: 150px 0 100px;
+    margin-top: -50px;
+}
+
+.contact-section .section-title {
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.contact-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.15);
+    border-color: var(--accent);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 25px;
+    transition: all 0.4s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+.contact-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-link {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsividade Contato */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-card {
+        padding: 30px 20px;
+    }
+    
+    .contact-icon {
+        font-size: 2rem;
+    }
+    
+    .contact-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 25px 15px;
+    }
+    
+    .contact-link {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

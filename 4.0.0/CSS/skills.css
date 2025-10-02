@@ -1,0 +1,328 @@
+/* Seção Habilidades */
+.skills-section {
+    background: var(--dark);
+    color: white;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+    padding: 150px 0 100px;
+    margin-top: -50px;
+}
+
+.skills-section .section-title {
+    color: white;
+}
+
+/* Filtros */
+.skills-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+    animation: fadeIn 1s ease-out 0.4s both;
+}
+
+.skill-filter-btn {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.skill-filter-btn:hover, .skill-filter-btn.active {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-3px);
+}
+
+/* Grid de Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+.skill-title {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.skill-level {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Modal de Habilidades */
+.skill-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(26, 26, 46, 0);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, background-color 0.4s ease;
+    padding: 20px;
+}
+
+.skill-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(26, 26, 46, 0.95);
+}
+
+.skill-modal-content {
+    background: rgba(31, 55, 201, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid var(--accent);
+    box-shadow: 0 15px 50px rgba(76, 201, 240, 0.3);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.4s ease;
+    position: relative;
+}
+
+.skill-modal-overlay.active .skill-modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.skill-modal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(76, 201, 240, 0.3);
+    padding-bottom: 20px;
+}
+
+.skill-modal-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-right: 25px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.skill-modal-title {
+    font-size: 2.2rem;
+    color: white;
+    margin: 0;
+}
+
+.skill-modal-level {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--dark);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.skill-modal-body {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.skill-modal-body p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.skill-modal-body ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.skill-modal-body li {
+    margin-bottom: 8px;
+}
+
+.skill-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.skill-modal-close:hover {
+    color: var(--accent);
+    background: rgba(255,255,255,0.1);
+    transform: rotate(90deg);
+}
+
+/* Efeito de clone para animação */
+.card-clone {
+    position: fixed;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+/* Responsividade Habilidades */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .skill-card {
+        padding: 15px;
+    }
+    
+    .skill-icon {
+        font-size: 1.8rem;
+    }
+    
+    .skill-title {
+        font-size: 1rem;
+    }
+    
+    .skill-level {
+        font-size: 0.8rem;
+    }
+    
+    .skill-modal-content {
+        padding: 30px 20px;
+        width: 95%;
+    }
+    
+    .skill-modal-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .skill-modal-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+        font-size: 2.5rem;
+    }
+    
+    .skill-modal-title {
+        font-size: 1.8rem;
+    }
+    
+    .skill-modal-body {
+        font-size: 1rem;
+    }
+    
+    .skills-filters {
+        gap: 10px;
+    }
+    
+    .skill-filter-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+    
+    .skill-card {
+        padding: 12px;
+    }
+    
+    .skill-modal-content {
+        padding: 25px 15px;
+    }
+    
+    .skill-modal-title {
+        font-size: 1.6rem;
+    }
+    
+    .skill-modal-body {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animações de entrada dos cards */
+.skill-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atrasos para animação em sequência */
+.skill-card:nth-child(1) { transition-delay: 0.1s; }
+.skill-card:nth-child(2) { transition-delay: 0.2s; }
+.skill-card:nth-child(3) { transition-delay: 0.3s; }
+.skill-card:nth-child(4) { transition-delay: 0.4s; }
+.skill-card:nth-child(5) { transition-delay: 0.5s; }
+.skill-card:nth-child(6) { transition-delay: 0.6s; }

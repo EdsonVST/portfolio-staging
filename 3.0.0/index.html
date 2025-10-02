@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson V. S. T. Silva | Fullstack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navegação -->
+<header>
+    <nav>
+        <a href="#home" class="logo">
+            <i class="fas fa-code logo-icon"></i>
+            <span>EdsonVST</span>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        
+        <button class="mobile-menu-btn" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>
+
+    <!-- Seção Hero -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image-container">
+                <img src="images/edson.jpg" alt="Edson Silva" class="hero-image">
+            </div>
+            
+            <div class="hero-content">
+                <h2 class="hero-subtitle">Fullstack Developer</h2>
+                <h1 class="hero-title">EDSON V. S. T. SILVA</h1>
+                
+                <!-- Tech Stack -->
+                <div class="tech-stack">
+                    <i class="fab fa-python tech-icon" data-tooltip="Python"></i>
+                    <i class="fas fa-database tech-icon" data-tooltip="SQL"></i>
+                    <i class="fab fa-java tech-icon" data-tooltip="Java"></i>
+                    <i class="fab fa-js tech-icon" data-tooltip="JavaScript"></i>
+                    <i class="fas fa-c tech-icon" data-tooltip="C"></i>
+                    <div class="tech-icon" style="font-size: 3rem; font-weight: bold;" data-tooltip="C++">C<span style="color: #00599C;">++</span></div>
+                </div>
+                
+                <!-- Botões de Ação -->
+                <div class="cta-buttons">
+                    <a href="#sobre" class="btn btn-primary">
+                        <i class="fas fa-laptop-code"></i> Quem sou eu
+                    </a>
+                    <a href="doc/Edson_Taveira-Currículo.pdf" class="btn btn-secondary" download>
+                        <i class="fas fa-download"></i> Baixar Currículo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div>
+                    <img src="images/edson.jpg" alt="Edson Silva" class="about-image">
+                </div>
+                <div class="about-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades" class="skills-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Minhas Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">Desenvolvimento Fullstack</h3>
+                    <p class="skill-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-title">Banco de Dados</h3>
+                    <p class="skill-desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="skill-title">Desenvolvimento Responsivo</h3>
+                    <p class="skill-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="skill-title">Análise de Dados</h3>
+                    <p class="skill-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/FreeGaze.jpg" alt="FreeGaze">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Raspberry Pi</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">FreeGaze</h2>
+                        <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <div class="project-buttons">
+                            <a href="https://github.com/EdsonVST/FreeGaze" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-github"></i> Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/E-Eco.png" alt="E-Eco">
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">E-Eco</h2>
+                        <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <div class="project-buttons">
+                            <a href="https://github.com/EdsonVST/web-frontend" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-github"></i> Frontend
+                            </a>
+                            <a href="https://github.com/dangerprogrammer/web-backend" class="btn btn-secondary" target="_blank">
+                                <i class="fab fa-github"></i> Backend
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/semaforo.png" alt="Semáforo Adaptativo">
+                        <div class="project-tags">
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Arduino</span>
+                            <span class="project-tag">API</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">Semáforo Adaptativo</h2>
+                        <p class="project-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <div class="project-buttons">
+                            <a href="https://www.tinkercad.com/things/eKPnl0QGhBf/copy-of-semaforo/editel" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                            <a href="https://github.com/EdsonVST/Sem-foro_adaptativo" class="btn btn-secondary" target="_blank">
+                                <i class="fab fa-github"></i> Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Entre em Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-info">edsontaveir@gmail.com</p>
+                    <a href="mailto:edsontaveir@gmail.com" class="contact-link">Enviar Mensagem</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <p class="contact-info">(15) 99833-4291</p>
+                    <a href="https://wa.me/5515998334291" target="_blank" class="contact-link">Enviar Mensagem</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Agendar Reunião</h3>
+                    <p class="contact-info">Disponível para chamadas e reuniões</p>
+                    <a href="https://calendly.com/edsontaveir" target="_blank" class="contact-link">Agendar Horário</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/EdsonVST" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/edson-v-s-t-silva/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/edson.taveira/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:edsontaveir@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <p class="copyright">© <span id="year"></span> Edson V. S. T. Silva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script src="js/projetos.js"></script>
+</body>
+</html>
