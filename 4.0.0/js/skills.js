@@ -127,6 +127,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Crio interfaces modernas e responsivas com código limpo e organizado.</p>
             `
         },
+        api: {
+            title: "API",
+            icon: '<i class="fas fa-cloud"></i>',
+            level: "Intermediário",
+            description: `
+                <p>Conhecimento sólido em estilização web com capacidade de implementar layouts responsivos:</p>
+                <ul>
+                    <li>Flexbox e Grid Layout</li>
+                    <li>Animações e transições CSS</li>
+                    <li>Design responsivo e mobile-first</li>
+                    <li>Pré-processadores (SASS/SCSS)</li>
+                </ul>
+                <p>Crio interfaces modernas e responsivas com código limpo e organizado.</p>
+            `
+        },
         git: {
             title: "Git/GitHub",
             icon: '<i class="fab fa-github"></i>',
@@ -142,9 +157,69 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Experiência em gerenciamento de projetos versionados.</p>
             `
         },
-        react: {
-            title: "React",
-            icon: '<i class="fab fa-react"></i>',
+        arduino: {
+            title: "Arduino",
+            icon: '<i class="fas fa-microchip"></i>',
+            level: "Intermediário",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
+        arduino: {
+            title: "powerbi",
+            icon: '<i class="fas fa-chart-line"></i>',
+            level: "Intermediário",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
+        Office: {
+            title: "Pacote Office",
+            icon: '<i class="fas fa-file-excel"></i>',
+            level: "Avançado",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
+        datasul: {
+            title: "Datasul",
+            icon: '<i class="fas fa-industry"></i>',
+            level: "Intermediário",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
+        rm: {
+            title: "RM",
+            icon: '<i class="fas fa-cogs"></i>',
             level: "Básico",
             description: `
                 <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
@@ -156,7 +231,67 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
                 <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
             `
-        }
+        },
+        tms: {
+            title: "TMS",
+            icon: '<i class="fas fa-truck"></i>',
+            level: "Avançado",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
+        autocad: {
+            title: "AutoCAD",
+            icon: '<i class="fas fa-ruler-combined"></i>',
+            level: "Avançado",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
+        sketchup: {
+            title: "SketchUp",
+            icon: '<i class="fas fa-cube"></i>',
+            level: "Avançado",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
+        max: {
+            title: "3ds Max",
+            icon: '<i class="fas fa-cube"></i>',
+            level: "Básico",
+            description: `
+                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
+                <ul>
+                    <li>Componentes funcionais e hooks</li>
+                    <li>Gerenciamento de estado com Context API</li>
+                    <li>Integração com APIs</li>
+                    <li>Desenvolvimento de SPAs</li>
+                </ul>
+                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
+            `
+        },
     };
 
     // Elementos do DOM
