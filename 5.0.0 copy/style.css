@@ -1,0 +1,435 @@
+:root {
+  --orange: #ff6a2b;
+  --bg-dark: #0b0b0b;
+  --bg-card: #141414;
+  --text-light: #ffffff;
+  --text-muted: #b3b3b3;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 20px;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--orange);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* NAV DESKTOP */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+/* MENU BUTTON */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 100px 20px 80px;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 25px;
+}
+
+.section h2 span {
+  color: var(--orange);
+}
+
+.section-text {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.dark {
+  background: linear-gradient(180deg, #0f0f0f, #090909);
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.badge {
+  border: 1px solid var(--orange);
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: var(--orange);
+  font-size: 0.85rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-top: 20px;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--text-muted);
+}
+
+.hero p {
+  max-width: 520px;
+  margin: 20px 0 30px;
+  color: var(--text-muted);
+}
+
+/* SKILLS ICONS */
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2rem;
+  color: var(--orange);
+  margin-bottom: 35px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #000;
+}
+
+.btn-secondary {
+  border: 1px solid #444;
+  color: #fff;
+}
+
+/* ================= STATS ================= */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats h3 {
+  color: var(--orange);
+  font-size: 2rem;
+}
+
+/* ================= GRIDS ================= */
+.skills-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.skill-card,
+.project-card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 14px;
+}
+
+/* ================= CONTACT ================= */
+.contact-form {
+  max-width: 500px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #111;
+  border: 1px solid #333;
+  padding: 14px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.contact-form button {
+  background: var(--orange);
+  color: #000;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* ================= MOBILE MENU ================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #000;
+    padding-top: 100px;
+    transition: 0.3s;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+}
+
+/* ================= FULL PAGE SECTIONS ================= */
+section {
+  min-height: 100vh;
+  padding: 80px 20px 60px;
+  scroll-margin-top: 80px;
+}
+
+
+/* HERO já é full */
+.hero {
+  min-height: 100vh;
+}
+
+/* Evita sobreposição do menu fixo */
+section:not(.hero) {
+  scroll-margin-top: 80px;
+}
+
+/* ================= SOBRE COM FOTO ================= */
+.sobre-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.sobre-foto {
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-foto img {
+  width: 100%;
+  max-width: 340px; /* FOTO MAIOR */
+  border-radius: 24px;
+  object-fit: cover;
+  border: 3px solid var(--orange);
+}
+
+
+.sobre-conteudo .section-text {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .sobre-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sobre-conteudo .section-text {
+    text-align: center;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+}
+
+/* ================= SKILLS COM NÍVEL ================= */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-card i {
+  font-size: 3rem;
+  color: var(--orange);
+}
+
+.skill-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* NÍVEIS */
+.nivel {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* CORES POR NÍVEL */
+.nivel.basico {
+  background: #333;
+  color: #ccc;
+}
+
+.nivel.intermediario {
+  background: #1f1f1f;
+  color: #ffb37a;
+}
+
+.nivel.avancado {
+  background: var(--orange);
+  color: #000;
+}
+
+/* HOVER */
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ================= SKILLS COMPACTAS ================= */
+.skills-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.skills-wrapper.expanded {
+  max-height: 1000px; /* suficiente para várias skills */
+}
+
+.skill-card {
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.skill-card i {
+  font-size: 2.4rem;
+}
+
+.skill-card h4 {
+  font-size: 1rem;
+}
+
+/* GRID MAIS COMPACTO */
+.skills-grid {
+  gap: 18px;
+}
+
+/* BOTÃO TOGGLE */
+.skills-toggle {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.skills-toggle button {
+  background: none;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.skills-toggle button:hover {
+  background: var(--orange);
+  color: #000;
+}
+
+/* ================= SKILLS COLLAPSE (SEM CORTE) ================= */
+.skills-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.skills-wrapper.expanded {
+  overflow: visible;
+}

@@ -8,15 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
             level: "Intermediário",
             description: `
                 <p>Minha principal ferramenta para análise de dados e automação de processos. Tenho experiência com:</p>
-                <ul>
-                    <li>Desenvolvimento de scripts para tratamento e análise de grandes volumes de dados</li>
-                    <li>Criação de APIs REST com Flask e FastAPI</li>
-                    <li>Automação de tarefas repetitivas e extração de dados de diversas fontes</li>
-                    <li>Implementação de algoritmos de machine learning básicos</li>
-                    <li>Integração com bancos de dados relacionais e NoSQL</li>
-                </ul>
-                <p>Utilizo frequentemente bibliotecas como Pandas, NumPy, Matplotlib e Requests para resolver problemas complexos de forma eficiente.</p>
-            `
+                    <ul>
+                        <li>Desenvolvimento de scripts para tratamento e análise de grandes volumes de dados</li>
+                        <li>Criação de APIs REST com Flask e FastAPI</li>
+                        <li>Automação de tarefas repetitivas e extração de dados de diversas fontes</li>
+                        <li>Implementação de algoritmos de machine learning básicos</li>
+                        <li>Integração com bancos de dados relacionais e NoSQL</li>
+                    </ul>
+                    <p>Utilizo frequentemente bibliotecas como Pandas, NumPy, Matplotlib e Requests para resolver problemas complexos de forma eficiente.</p>
+                `
         },
         java: {
             title: "Java",
@@ -24,31 +24,31 @@ document.addEventListener('DOMContentLoaded', function() {
             level: "Básico",
             description: `
                 <p>Linguagem que estou aprendendo para desenvolver aplicativos:</p>
-                <ul>
-                    <li>Noções básicas de sintaxe e estrutura da linguagem</li>
-                    <li>Programação Orientada a Objetos (POO): Classes, objetos, métodos, encapsulamento e herança simples</li>
-                    <li>Aplicações simples: Jogos e programas de console como calculadoras e sistemas de cadastro básico</li>
-                    <li>Tratamento de erros: Uso de try-catch para lidar com exceções</li>
-                    <li>Coleções: Introdução a ArrayList e HashMap para armazenar dados</li>
-                </ul>
-                <p>Atualmente, estou praticando com pequenos projetos para consolidar os fundamentos e evoluir para aplicações mais complexas.</p>
-            `
+                    <ul>
+                        <li>Noções básicas de sintaxe e estrutura da linguagem</li>
+                        <li>Programação Orientada a Objetos (POO): Classes, objetos, métodos, encapsulamento e herança simples</li>
+                        <li>Aplicações simples: Jogos e programas de console como calculadoras e sistemas de cadastro básico</li>
+                        <li>Tratamento de erros: Uso de try-catch para lidar com exceções</li>
+                        <li>Coleções: Introdução a ArrayList e HashMap para armazenar dados</li>
+                    </ul>
+                    <p>Atualmente, estou praticando com pequenos projetos para consolidar os fundamentos e evoluir para aplicações mais complexas.</p>
+                `
         },
         javascript: {
             title: "JavaScript",
             icon: '<i class="fab fa-js"></i>',
             level: "Intermediário",
             description: `
-                <p>A linguagem que me permite criar experiências web interativas e dinâmicas:</p>
-                <ul>
-                    <li>Desenvolvimento front-end com manipulação do DOM e eventos</li>
-                    <li>Consumo de APIs REST/GraphQL para aplicações web modernas</li>
-                    <li>Implementação de lógica de interface complexa</li>
-                    <li>Validação de formulários e feedback ao usuário</li>
-                    <li>Conhecimento em ES6+ e padrões modernos de JavaScript</li>
-                </ul>
-                <p>Utilizo JavaScript para tornar interfaces estáticas em experiências ricas e responsivas.</p>
-            `
+               <p>A linguagem que me permite criar experiências web interativas e dinâmicas:</p>
+                    <ul>
+                        <li>Desenvolvimento front-end com manipulação do DOM e eventos</li>
+                        <li>Consumo de APIs REST/GraphQL para aplicações web modernas</li>
+                        <li>Implementação de lógica de interface complexa</li>
+                        <li>Validação de formulários e feedback ao usuário</li>
+                        <li>Conhecimento em ES6+ e padrões modernos de JavaScript</li>
+                    </ul>
+                    <p>Utilizo JavaScript para tornar interfaces estáticas em experiências ricas e responsivas.</p>
+                `
         },
         sql: {
             title: "SQL",
@@ -56,15 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
             level: "Intermediário",
             description: `
                 <p>Minha ferramenta essencial para trabalhar com bancos de dados relacionais:</p>
-                <ul>
-                    <li>Modelagem e normalização de bancos de dados</li>
-                    <li>Criação de queries complexas com múltiplos joins</li>
-                    <li>Otimização de consultas para melhor desempenho</li>
-                    <li>Implementação de stored procedures e triggers</li>
-                    <li>Exportação e importação de dados</li>
-                </ul>
-                <p>Experiência prática com MySQL, SQL Server e SQLite em projetos acadêmicos.</p>
-            `
+                    <ul>
+                        <li>Modelagem e normalização de bancos de dados</li>
+                        <li>Criação de queries complexas com múltiplos joins</li>
+                        <li>Otimização de consultas para melhor desempenho</li>
+                        <li>Implementação de stored procedures e triggers</li>
+                        <li>Exportação e importação de dados</li>
+                    </ul>
+                    <p>Experiência prática com MySQL, SQL Server e SQLite em projetos acadêmicos.</p>
+                `
         },
         c: {
             title: "C",
@@ -72,30 +72,29 @@ document.addEventListener('DOMContentLoaded', function() {
             level: "Intermediário",
             description: `
                 <p>Minha primeira linguagem de programação, utilizada para desenvolvimento de sistemas:</p>
-                <ul>
-                    <li>Manipulação de ponteiros e gerenciamento manual de memória</li>
-                    <li>Desenvolvimento de algoritmos eficientes e estruturas de dados</li>
-                    <li>Interação com hardware e sistemas embarcados</li>
-                    <li>Uso de bibliotecas padrão para entrada/saída e manipulação de arquivos</li>
-                </ul>
-                <p>Utilização em projetos educacionais para compreensão de conceitos fundamentais de computação.</p>
-            `
+                    <ul>
+                        <li>Manipulação de ponteiros e gerenciamento manual de memória</li>
+                        <li>Desenvolvimento de algoritmos eficientes e estruturas de dados</li>
+                        <li>Interação com hardware e sistemas embarcados</li>
+                        <li>Uso de bibliotecas padrão para entrada/saída e manipulação de arquivos</li>
+                    </ul>
+                    <p>Utilização em projetos educacionais para compreensão de conceitos fundamentais de computação, desde o baixo nível até abstrações mais complexas.</p>
+                `
         },
         cplusplus: {
             title: "C++",
             icon: '<i class="fas fa-code"></i>',
             level: "Básico",
             description: `
-                <p>Linguagem de programação para desenvolvimento de sistemas complexos:</p>
-                <ul>
-                    <li>Programação Orientada a Objetos avançada</li>
-                    <li>Gerenciamento de memória com smart pointers</li>
-                    <li>Templates e programação genérica</li>
-                    <li>STL (Standard Template Library)</li>
-                    <li>Desenvolvimento de aplicações de alto desempenho</li>
-                </ul>
-                <p>Utilizada em projetos que exigem performance e controle de baixo nível.</p>
-            `
+                <p>Minha primeira linguagem de programação, utilizada para desenvolvimento de sistemas:</p>
+                    <ul>
+                        <li>Manipulação de ponteiros e gerenciamento manual de memória</li>
+                        <li>Desenvolvimento de algoritmos eficientes e estruturas de dados</li>
+                        <li>Interação com hardware e sistemas embarcados</li>
+                        <li>Uso de bibliotecas padrão para entrada/saída e manipulação de arquivos</li>
+                    </ul>
+                    <p>Utilização em projetos educacionais para compreensão de conceitos fundamentais de computação, desde o baixo nível até abstrações mais complexas.</p>
+                `
         },
         html: {
             title: "HTML5",
@@ -103,194 +102,203 @@ document.addEventListener('DOMContentLoaded', function() {
             level: "Avançado",
             description: `
                 <p>Domínio completo da linguagem de marcação para construção de interfaces web profissionais:</p>
-                <ul>
-                    <li>Estruturação otimizada para SEO com tags semânticas</li>
-                    <li>Templates dinâmicos para CMS</li>
-                    <li>Integração com JavaScript</li>
-                    <li>HTML modular e reutilizável</li>
-                </ul>
-                <p>Transformo designs complexos em HTML eficiente, com foco em semântica e acessibilidade.</p>
-            `
+                    <ul>
+                        <li>Estruturação otimizada para SEO com tags semânticas (article, section, nav, etc..)</li>
+                        <li>Templates dinâmicos para CMS (WordPress, Drupal)</li>
+                        <li>Integração com JavaScript (data attributes, DOM manipulation)</li>
+                        <li>HTML modular e reutilizável</li>
+                    </ul>
+                    <p>Transformo designs complexos em HTML eficiente, com foco em semântica, performance e acessibilidade.</p>
+                `
         },
         css: {
             title: "CSS3",
             icon: '<i class="fab fa-css3-alt"></i>',
             level: "Intermediário",
             description: `
-                <p>Conhecimento sólido em estilização web com capacidade de implementar layouts responsivos:</p>
-                <ul>
-                    <li>Flexbox e Grid Layout</li>
-                    <li>Animações e transições CSS</li>
-                    <li>Design responsivo e mobile-first</li>
-                    <li>Pré-processadores (SASS/SCSS)</li>
-                </ul>
-                <p>Crio interfaces modernas e responsivas com código limpo e organizado.</p>
-            `
+                <p>Conhecimento sólido em estilização web com capacidade de implementar layouts responsivos e efeitos visuais:</p>
+                    <ul>
+                        <li>Criação de UI components (buttons, modals, tooltips)</li>
+                        <li>Estilização de formulários acessíveis</li>
+                        <li>Landing pages responsivas</li>
+                        <li>Animações e transições CSS (keyframes, transform)</li>
+                    </ul>
+                    <p>Transformo designs em código mantível, com foco em organização e adaptabilidade.</p>
+                `
         },
         api: {
             title: "API",
             icon: '<i class="fas fa-cloud"></i>',
             level: "Intermediário",
             description: `
-                <p>Conhecimento sólido em estilização web com capacidade de implementar layouts responsivos:</p>
-                <ul>
-                    <li>Flexbox e Grid Layout</li>
-                    <li>Animações e transições CSS</li>
-                    <li>Design responsivo e mobile-first</li>
-                    <li>Pré-processadores (SASS/SCSS)</li>
-                </ul>
-                <p>Crio interfaces modernas e responsivas com código limpo e organizado.</p>
-            `
+                <p>Desenvolvimento e integração de APIs para conectar sistemas e serviços: </p>
+                    <ul>
+                        <li>Criação de APIs RESTful</li>
+                        <li>Autenticação e autorização (JWT, OAuth2, API Keys)</li>
+                        <li>Consumo de APIs externas (Google Maps, Telegram, Pagamentos, etc.)</li>
+                        <li>Testes de endpoints (Postman, Insomnia)</li>
+                        <li>Integração com front-end e IoT</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos e integrações com IoT (Arduino + APIs).</p>
+                `
         },
         git: {
             title: "Git/GitHub",
             icon: '<i class="fab fa-github"></i>',
             level: "Intermediário",
             description: `
-                <p>Controle de versão e colaboração em projetos:</p>
-                <ul>
-                    <li>Git flow e branching strategies</li>
-                    <li>Resolução de conflitos</li>
-                    <li>GitHub Actions para CI/CD</li>
-                    <li>Colaboração em equipe</li>
-                </ul>
-                <p>Experiência em gerenciamento de projetos versionados.</p>
-            `
+                <p>Plataforma de versionamento e colaboração para projetos de código e hardware:</p>
+                    <ul>
+                        <li>Controle de versão com Git (branching, merging, rebase)</li>
+                        <li>Gerenciamento de repositórios públicos e privados</li>
+                        <li>GitHub Pages para hospedagem de projetos</li>
+                        <li>Colaboração em equipe (issues, pull requests, code review)</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos e colaboração remota.</p>
+                `
         },
         arduino: {
             title: "Arduino",
             icon: '<i class="fas fa-microchip"></i>',
             level: "Intermediário",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Plataforma que me permite prototipar soluções de hardware e IoT:</p>
+                    <ul>
+                        <li>Desenvolvimento de sistemas embarcados básicos</li>
+                        <li>Integração com sensores e atuadores diversos</li>
+                        <li>Comunicação serial com computadores</li>
+                        <li>Projetos de automação residencial simples</li>
+                        <li>Monitoramento ambiental com coleta de dados</li>
+                    </ul>
+                    <p>Experiência em projetos acadêmicos envolvendo controle de dispositivos e automação.</p>
+                `
         },
-        arduino: {
+        powerbi: {
             title: "powerbi",
             icon: '<i class="fas fa-chart-line"></i>',
             level: "Intermediário",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Ferramenta de análise e visualização de dados que permite transformar informações em insights acionáveis:</p>
+                    <ul>
+                        <li>Criação de dashboards interativos e relatórios dinâmicos</li>
+                        <li>Transformação e limpeza de dados usando Power Query</li>
+                        <li>Modelagem de dados e criação de medidas com DAX</li>
+                        <li>Integração com diversas fontes de dados (Excel, SQL, APIs)</li>
+                        <li>Automação de atualizações e compartilhamento de relatórios</li>
+                    </ul>
+                    <p>Experiência em projetos de análise de dados para tomada de decisão empresarial.</p>
+                `
         },
         Office: {
             title: "Pacote Office",
             icon: '<i class="fas fa-file-excel"></i>',
             level: "Avançado",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Suíte de produtividade que domino profundamente:</p>
+                    <ul>
+                        <li>Excel avançado com fórmulas complexas, tabelas dinâmicas e macros VBA</li>
+                        <li>Criação de documentos profissionais no Word com estilos e modelos</li>
+                        <li>Apresentações dinâmicas no PowerPoint com animações e design</li>
+                        <li>Automação de fluxos de trabalho entre aplicativos</li>
+                        <li>Criação de dashboards e relatórios analíticos</li>
+                    </ul>
+                    <p>Utilizo essas ferramentas diariamente para análise de dados e documentação profissional.</p>
+                `
         },
         datasul: {
             title: "Datasul",
             icon: '<i class="fas fa-industry"></i>',
             level: "Intermediário",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Sistema ERP que utilizo no suporte técnico profissional:</p>
+                    <ul>
+                        <li>Gerenciamento de usuários e perfis de acesso</li>
+                        <li>Diagnóstico e correção de problemas funcionais no sistema</li>
+                        <li>Parametrização básica do sistema</li>
+                        <li>Extração de relatórios e dados</li>
+                        <li>Integração com outros sistemas corporativos</li>
+                    </ul>
+                    <p>Experiência prática no suporte diário aos usuários e manutenção do sistema.</p>
+                `
         },
         rm: {
             title: "RM",
             icon: '<i class="fas fa-cogs"></i>',
             level: "Básico",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Sistema de gestão de relacionamento que domino no contexto profissional:</p>
+                    <ul>
+                        <li>Configuração e manutenção do sistema</li>
+                        <li>Gerenciamento de acessos e segurança</li>
+                        <li>Resolução de problemas e inconsistências</li>
+                        <li>Extração e análise de dados do sistema</li>
+                        <li>Integração com outros sistemas corporativos</li>
+                    </ul>
+                    <p>Atuação direta no suporte técnico e manutenção do sistema em ambiente profissional.</p>
+                `
         },
         tms: {
             title: "TMS",
             icon: '<i class="fas fa-truck"></i>',
             level: "Avançado",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Sistema de gerenciamento de transporte com que trabalho atualmente:</p>
+                    <ul>
+                        <li>Configuração avançada do sistema: parametrização completa de fretes, tabelas de preços, impostos (ICMS, ISS) e regras fiscais</li>
+                        <li>Integração sistêmica: conexão e sincronização de dados entre TMS e ERP Datasul (pedidos, notas fiscais, cadastros)</li>
+                        <li>Gestão de banco de dados: realização de ajustes diretos via SQL para correções e otimizações</li>
+                        <li>Suporte especializado: resolução de problemas complexos e treinamento de usuários</li>
+                    </ul>
+                    <p>Experiência prática no suporte diário aos usuários e operação do sistema.</p>
+                `
         },
         autocad: {
             title: "AutoCAD",
             icon: '<i class="fas fa-ruler-combined"></i>',
             level: "Avançado",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Ferramenta de CAD que utilizo para projetos técnicos precisos:</p>
+                    <ul>
+                        <li>Desenho de plantas arquitetônicas em 2D</li>
+                        <li>Desenvolvimento de projetos elétricos e hidráulicos</li>
+                        <li>Criação de detalhes construtivos</li>
+                        <li>Modelagem 3D básica de elementos arquitetônicos</li>
+                        <li>Configuração de layouts e impressão profissional</li>
+                    </ul>
+                    <p>Utilizado em projetos acadêmicos e profissionais na área de edificações.</p>
+                `
         },
         sketchup: {
             title: "SketchUp",
             icon: '<i class="fas fa-cube"></i>',
             level: "Avançado",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Ferramenta de modelagem 3D que domino para visualização arquitetônica:</p>
+                    <ul>
+                        <li>Modelagem volumétrica de edificações</li>
+                        <li>Criação de cenários e contextos urbanos</li>
+                        <li>Utilização de componentes dinâmicos</li>
+                        <li>Renderização básica com V-Ray</li>
+                        <li>Apresentação de projetos para clientes</li>
+                    </ul>
+                    <p>Utilizado para desenvolvimento de projetos acadêmicos e maquetes eletrônicas.</p>
+                `
         },
         max: {
             title: "3ds Max",
             icon: '<i class="fas fa-cube"></i>',
             level: "Básico",
             description: `
-                <p>Biblioteca JavaScript para construção de interfaces de usuário:</p>
-                <ul>
-                    <li>Componentes funcionais e hooks</li>
-                    <li>Gerenciamento de estado com Context API</li>
-                    <li>Integração com APIs</li>
-                    <li>Desenvolvimento de SPAs</li>
-                </ul>
-                <p>Em processo de aprendizado e desenvolvimento de projetos.</p>
-            `
+                <p>Software de modelagem 3D avançada que estou aprendendo:</p>
+                    <ul>
+                        <li>Modelagem poligonal básica</li>
+                        <li>Aplicação de materiais e texturas</li>
+                        <li>Configuração de iluminação simples</li>
+                        <li>Renderização básica with Scanline</li>
+                        <li>Criação de animações simples</li>
+                    </ul>
+                    <p>Conhecimento inicial adquirido em cursos e projetos pessoais de aprendizagem.</p>
+                `
         },
     };
 
